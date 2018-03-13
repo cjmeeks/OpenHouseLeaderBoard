@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev" : "nodemon app.js true"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -13,6 +14,7 @@
     "express": "~4.15.5",
     "mongoose": "^5.0.9",
     "morgan": "~1.9.0",
+    "nodemon": "^1.17.2",
     "serve-favicon": "~2.4.5"
   }
 }

@@ -1,10 +1,12 @@
 var express = require('express');
+var http = require('http');
+
 
 //mongo
 var mongoose = require('mongoose');
 var employees = require('./routes/employees');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/product')
+mongoose.connect('mongodb://group:ksu12345@ds213209.mlab.com:13209/openhouseleaderboard')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
@@ -54,5 +56,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+var server = http.createServer(app);
+server.listen(3001);
 
 module.exports = app;
