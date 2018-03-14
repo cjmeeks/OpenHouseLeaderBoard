@@ -5,12 +5,12 @@ var Display = require("../models/Display");
 var displayController = {};
 
 displayController.list = function(req, res) {
-    Display.find({}).exec(function (err, employees) {
+    Display.find({}).exec(function (err, displays) {
       if (err) {
         console.log("Error:", err);
       }
       else {
-        res.render("../views/display", {displays: displays});
+        res.render("../views/displays/index", {displays: displays});
       }
     });
   };
@@ -26,23 +26,23 @@ displayController.list = function(req, res) {
   //   });
   // };
 
-  // employeeController.create = function(req, res) {
-  //   res.render("../views/employees/create");
-  // };
+  displayController.create = function(req, res) {
+    res.render("../views/displays/create");
+  };
 
-  // employeeController.save = function(req, res) {
-  //   var employee = new Display(req.body);
+  displayController.save = function(req, res) {
+    var display = new Display(req.body);
   
-  //   employee.save(function(err) {
-  //     if(err) {
-  //       console.log(err);
-  //       res.render("../views/employees/create");
-  //     } else {
-  //       console.log("Successfully created an employee.");
-  //       res.redirect("/employees/show/"+employee._id);
-  //     }
-  //   });
-  // };
+    display.save(function(err) {
+      if(err) {
+        console.log(err);
+        res.render("../views/displays/create");
+      } else {
+        console.log("Successfully created an display.");
+        res.redirect("/displays");
+      }
+    });
+  };
 
   // employeeController.edit = function(req, res) {
   //   Display.findOne({_id: req.params.id}).exec(function (err, employee) {
@@ -77,4 +77,4 @@ displayController.list = function(req, res) {
   //   });
   // };
 
-  module.exports = employeeController;
+  module.exports = displayController;

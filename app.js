@@ -4,7 +4,6 @@ var http = require('http');
 
 //mongo
 var mongoose = require('mongoose');
-var employees = require('./routes/employees');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://group:ksu12345@ds213209.mlab.com:13209/openhouseleaderboard')
   .then(() =>  console.log('connection succesful'))
@@ -18,7 +17,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var displays = require('./routes/displays');
 
 
 var app = express();
@@ -35,9 +34,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/employees', employees);
+// app.use('/', index);
+app.use('/', displays)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

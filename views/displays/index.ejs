@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/displays">Display List</a></h3>
+      <h3><a href="/displays/create">Create Display</a></h3>
+      <h1>Display List</h1>
+      <% if(displays.length>0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Display Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+  
+            <% for(var i=0; i<displays.length;i++) { %>
+              <tr>
+                <td><%= displays[i].name%></td>
+                <td><%= displays[i].description%></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <% } else { %>
+          <div>No Displays found.</div>
+        <% } %>
+    </div>
+  </body>
+</html>
