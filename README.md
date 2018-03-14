@@ -16,6 +16,11 @@ express
 
 npm install
 
+## Development
+
+npm start -> Runs the server as prod basically on port 3000
+npm run dev -> runs nodemon on port 3001
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
