@@ -11,8 +11,8 @@ router.get('/create', display.create);
 // Save employee
 router.post('/save', display.save);
 
-// // Get single employee by id
-// router.get('/show/:id', employee.show);
+// Get single employee by id
+router.post('/vote/:id', display.voteForOneDisplay);
 
 // // Edit employee
 // router.get('/edit/:id', employee.edit);

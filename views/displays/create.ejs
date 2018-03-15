@@ -6,9 +6,9 @@
   </head>
   <body>
     <div class="container">
-      <h3><a href="/displays">Display List</a></h3>
+      <h3><a href="/">Display List</a></h3>
       <h1>Create New Display</h1>
-      <form action="/displays/save" method="post">
+      <form action="/save" method="post">
         <table>
           <tbody>
             <tr>
@@ -18,6 +18,10 @@
             <tr>
               <td>Description</td>
               <td><textarea name="description"></textarea></td>
+            </tr>
+            <tr>
+              <td>Votes</td>
+              <td><input type="number" name="votes" /></td>
             </tr>
             <tr>
               <td colspan="2"><input type="submit" value="Save" /></td>

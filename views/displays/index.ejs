@@ -6,8 +6,8 @@
   </head>
   <body>
     <div class="container">
-      <h3><a href="/displays">Display List</a></h3>
-      <h3><a href="/displays/create">Create Display</a></h3>
+      <h3><a href="/">Display List</a></h3>
+      <h3><a href="/create">Create Display</a></h3>
       <h1>Display List</h1>
       <% if(displays.length>0) { %>
         <table>
@@ -15,6 +15,7 @@
             <tr>
               <th>Display Name</th>
               <th>Description</th>
+              <th>Votes</th>
             </tr>
           </thead>
           <tbody>
@@ -23,6 +24,12 @@
               <tr>
                 <td><%= displays[i].name%></td>
                 <td><%= displays[i].description%></td>
+                <td><%= displays[i].votes%></td>
+                <td>
+                    <form action="/vote/<%= displays[i]._id%>" method="post">
+                      <button type="submit">Vote</button>
+                    </form>
+                </td>
               </tr>
             <% } %>
           </tbody>

@@ -39,7 +39,31 @@ displayController.list = function(req, res) {
         res.render("../views/displays/create");
       } else {
         console.log("Successfully created an display.");
-        res.redirect("/displays");
+        res.redirect("/");
+      }
+    });
+  };
+
+  displayController.voteForOneDisplay = function(req, res){
+    Display.findOne({_id: req.params.id}).exec(function (err, display) {
+      if (err) {
+        console.log("Error:", err);
+      }
+      else {
+        if(display.votes){
+          display.votes++;
+        }
+        else {
+          display.votes = 1;
+        }
+        display.save(function(err) {
+          if(err) {
+            console.log(err);
+          } else {
+            console.log("Successfully Voted an display.");
+            res.redirect("/");
+          }
+        });
       }
     });
   };
