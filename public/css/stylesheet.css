@@ -26,8 +26,12 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 #vote .card {
-	box-shadow: 0px 1px 5px #555;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.12);
 	background-color: white;
+}
+#vote .card:hover {
+	box-shadow: 0px 14px 28px rgba(0,0,0,0.35);
+	cursor: pointer;
 }
 
 #vote .card_title {
@@ -50,4 +54,5 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	margin-right: auto;
 	padding-top: 1rem;
 }
+
 
