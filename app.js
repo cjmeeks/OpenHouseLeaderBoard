@@ -1,12 +1,14 @@
 var express = require('express');
 var http = require('http');
 
+const PORT = 3001;
+
 
 //mongo
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://group:ksu12345@ds213209.mlab.com:13209/openhouseleaderboard')
-  .then(() =>  console.log('connection succesful'))
+  .then(() =>  console.log('MongoDB connection succesful'))
   .catch((err) => console.error(err));
 
   
@@ -56,6 +58,8 @@ app.use(function(err, req, res, next) {
 });
 
 var server = http.createServer(app);
-server.listen(3001);
+server.listen(PORT, function() {
+	console.log("Server listening on port " + PORT);
+});
 
 module.exports = app;
