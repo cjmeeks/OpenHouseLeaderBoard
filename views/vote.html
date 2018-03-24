@@ -10,7 +10,8 @@
 	    <section class="card-container">
 	    	<div class="card">
 	    		<figure class="card_icon">
-	    			<img src="../public/images/icons/startup.svg">
+	    			<!-- TODO: Replace with database ID -->
+	    			<img id="1">
 	    		</figure>
 	    		<header class="card_title">
 	    			<h3>Display Name 1</h3>
@@ -19,7 +20,7 @@
 
 	    	<div class="card">
 	    		<figure class="card_icon">
-	    			<img src="../public/images/icons/startup.svg">
+	    			<img id="2">
 	    		</figure>
 	    		<header class="card_title">
 	    			<h3> Display Name 2</h3>
@@ -28,7 +29,7 @@
 
 	    	<div class="card">
 	    		<figure class="card_icon">
-	    			<img src="../public/images/icons/startup.svg">
+	    			<img id="3">
 	    		</figure>
 	    		<header class="card_title">
 	    			<h3>Display Name 3</h3>
@@ -37,13 +38,170 @@
 
 	    	<div class="card">
 	    		<figure class="card_icon">
-	    			<img src="../public/images/icons/startup.svg">
+	    			<img id="4">
 	    		</figure>
 	    		<header class="card_title">
 	    			<h3>Display Name 4</h3>
 	    		</header>
 	    	</div>
-	    </section>
-	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="5">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3>Display Name 1</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="6">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3> Display Name 2</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="7">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3>Display Name 3</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="8">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3>Display Name 4</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="9">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3>Display Name 1</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="10">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3> Display Name 2</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="11">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3> Display Name 2</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="12">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3>Display Name 3</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="13">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3>Display Name 4</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="14">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3>Display Name 1</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="15">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3> Display Name 2</h3>
+	    		</header>
+	    	</div>
+
+	    	<div class="card">
+	    		<figure class="card_icon">
+	    			<img id="16">
+	    		</figure>
+	    		<header class="card_title">
+	    			<h3> Display Name 2</h3>
+	    		</header>
+	    	</div>
+
+	    	
+	    </section> <!-- End Card style -->
+	</div> <!-- End voting page -->
   </body>
+
+  <footer class="footer">
+  	<strong>Test</strong>
+  	<p>Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
+  </footer>
 </html>
+
+<script>
+	/* TODO: Replace with number of displays from EJS */ 
+	var NUM_DISPLAYS = 16;
+	var icons = {
+		1: "../public/images/icons/startup.svg",
+		2: "../public/images/icons/telescope.svg",
+		3: "../public/images/icons/satellite.svg",
+		4: "../public/images/icons/solar-system.svg",
+		5: "../public/images/icons/solar-system-2.svg",
+		6: "../public/images/icons/aqualung.svg",
+		7: "../public/images/icons/space-ship.svg",
+		8: "../public/images/icons/ufo.svg",
+		9: "../public/images/icons/planet.svg",
+		10: "../public/images/icons/robot.svg",
+		11: "../public/images/icons/robot-2.svg",
+		12: "../public/images/icons/space-ship-2.svg",
+		13: "../public/images/icons/moon-rover.svg",
+		14: "../public/images/icons/moon-rover-2.svg",
+		15: "../public/images/icons/space-ship-3.svg"
+	};
+
+	/* Get a random icon from the icons object */
+	function getRandomIcon() {
+		/* Random number between 1 and 15 */
+		var min = 1;
+		var max = 15;
+		var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+		return icons[randomNum];
+	}
+
+	/* Give each card a random icon */
+	function populateCardIcons() {
+		for(var id = 1; id < NUM_DISPLAYS; id++) {
+			var icon = getRandomIcon();
+			document.getElementById(id).src = icon; 
+		}
+	}
+	populateCardIcons();
+	
+	
+</script>
