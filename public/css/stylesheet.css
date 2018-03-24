@@ -37,6 +37,7 @@ a {
 	margin-top: 80px;
 }
 
+
 /* ============================================================
 Responsive Voting Card Grid
 Inspired by:
@@ -76,6 +77,26 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 1rem;
+}
+
+/* Green check mark icon
+ Inspired by https://codepen.io/andytran/pen/BNjymy */
+#vote .voted {
+	display: block;
+	visibility: hidden;
+	/*position: absolute;*/
+	top: 20px;
+	right: 20px;
+	z-index: 1;
+	width: 50px;
+	height: 50px;
+	padding: 9px 0;
+	font-weight: 700;
+	text-align: center;
+	background-color: green;
+	border-radius: 100%;
+
+	margin: 10px;
 }
 
 
