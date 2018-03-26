@@ -14,6 +14,12 @@ router.post('/save', display.save);
 // Get single employee by id
 router.post('/vote/:id', display.voteForOneDisplay);
 
+router.get('/vote', display.show);
+
+router.get('/leaderboard', function(req, res) {
+    res.render('leaderboard');
+  });
+
 // // Edit employee
 // router.get('/edit/:id', employee.edit);
 

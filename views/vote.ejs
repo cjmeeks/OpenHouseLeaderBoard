@@ -6,24 +6,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+		<%console.log(displays);%>
   	<div id="vote">
   		<div class="title"><h1><i>Select Your Favorite Computer Science Display</i></h1></div>
   		<!-- The grid of CS Open House Project cards -->
 	    <section class="card-container">
-	    	<!-- TODO: Add display ID from db and make it card ID -->
-	    	<div class="card" onclick="selectCard('v1', '1')" id="1">
+			<!-- TODO: Add display ID from db and make it card ID -->
+			<% for(i=1;i<=displays.length;i++) {%>
+	    	<div class="card" onclick="selectCard('v<%= i %>', '<%= i %>')" id="<%= i %>">
 	    		<!-- TODO: Add display ID from database to v -->
-	    		<div id="v1" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
+	    		<div id="v<%= i %>" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
 	    		<figure class="card_icon">
 	    			<!-- TODO: Add display ID from database to i -->
-	    			<img id="i1">
+	    			<img id="i<%= i %>">
 	    		</figure>
 	    		<header class="card_title">
-	    			<h3>Display Name 1</h3>
+	    			<h3><%= displays[i-1].description %></h3>
 	    		</header>
-	    	</div>
+			</div>
+			<% } %>
 
-	    	<div class="card" onclick="selectCard('v2', '2')" id="2">
+	    	<!-- <div class="card" onclick="selectCard('v2', '2')" id="2">
 	    		<div id="v2" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
 	    		<figure class="card_icon">
 	    			<img id="i2">
@@ -171,7 +174,7 @@
 	    		<header class="card_title">
 	    			<h3> Display Name 2</h3>
 	    		</header>
-	    	</div>
+	    	</div> -->
 	    </section> <!-- End Card style -->
 	    <div class="btn-wrapper">
 	    	<input type="button" class="btn btn-top-color" value="Vote">

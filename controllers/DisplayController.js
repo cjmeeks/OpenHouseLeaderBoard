@@ -15,16 +15,17 @@ displayController.list = function(req, res) {
     });
   };
 
-  // employeeController.show = function(req, res) {
-  //   Display.findOne({_id: req.params.id}).exec(function (err, employee) {
-  //     if (err) {
-  //       console.log("Error:", err);
-  //     }
-  //     else {
-  //       res.render("../views/employees/show", {employee: employee});
-  //     }
-  //   });
-  // };
+displayController.show = function(req, res) {
+    Display.find({}).exec(function (err, displays) {
+      if (err) {
+        console.log("Error:", err);
+      }
+      else {
+        console.log(displays);
+        res.render("../views/vote", {displays: displays});
+      }
+    });
+  };
 
   displayController.create = function(req, res) {
     res.render("../views/displays/create");
