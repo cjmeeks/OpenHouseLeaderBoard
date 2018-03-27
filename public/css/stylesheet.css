@@ -39,8 +39,8 @@ a {
 
 
 /* ============================================================
-Responsive Voting Card Grid
-Inspired by:
+Responsive Voting Card Grid and button
+Grid inspired by:
 https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/
 ==============================================================*/
 
@@ -159,4 +159,82 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 #vote .btn-wrapper {
 	display: flex;
 	justify-content: center;
+}
+
+/* ============================================================
+Leaderboard styles
+Inspired by https://codepen.io/anon/pen/aYVpvX
+==============================================================*/
+/* Table Borders */
+/*#leaderboard table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}*/
+
+/* Cell Padding */
+/*#leaderboard th, td {
+	padding: 15px;
+}
+*/
+
+#leaderboard caption {
+	background: #919194;
+}
+
+/* General table styles */
+#leaderboard .table-fill {
+	background: #5a2b81;
+	border-radius: 3px;
+	border-collapse: collapse;
+	height: 320px;
+	margin: auto;
+	width: 100%;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	animation: float 5s infinite;
+	/*padding: 100px;*/
+	/*max-width: 1000px;*/
+}
+
+
+/* Table header styles */
+#leaderboard th {
+	color: white;
+	/*background: #919194;*/
+  	border-right: 1px solid black;
+  	border-top: 1px solid black;
+  	/*font-size: 24px;*/
+  	/*padding: 24px;*/
+  	text-align: center;
+  	/*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);*/
+}
+
+/* Table row styles */
+#leaderboard tr {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	font-size: 25px;
+	height: 100px;
+}
+
+
+#leaderboard tr:first-child {
+  border-top:none;
+}
+
+#leaderboard tr:last-child {
+  border-bottom:none;
+}
+ 
+/* Make every other row a darker shade of purple */
+#leaderboard tr:nth-child(odd) td {
+  background: #462366;
+}
+
+/* Table data styles */
+#leaderboard td {
+	background: #5a2b81;
+	padding: 20px;
+	text-align: center;
+	border-right: 1px solid black;
 }
