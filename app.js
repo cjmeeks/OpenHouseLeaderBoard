@@ -47,6 +47,10 @@ app.get('/', function(req, res) {
   res.render('leaderboard');
 });
 
+app.get('/submitted', function(req, res) {
+  res.render('submitted');
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
