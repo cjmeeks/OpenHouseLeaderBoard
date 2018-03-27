@@ -18,7 +18,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
 var displays = require('./routes/displays');
 
 
@@ -36,16 +35,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', index);
-// app.use('/', displays)
+//our routes
+app.use('/', displays);
 
-app.get('/vote', function(req, res) {
-  res.render('vote');
-});
-
-app.get('/', function(req, res) {
-  res.render('leaderboard');
-});
 
 app.get('/submitted', function(req, res) {
   res.render('submitted');

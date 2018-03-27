@@ -10,172 +10,25 @@
   		<div class="title"><h1><i>Select Your Favorite Computer Science Display</i></h1></div>
   		<!-- The grid of CS Open House Project cards -->
 	    <section class="card-container">
-	    	<!-- TODO: Add display ID from db and make it card ID -->
-	    	<div class="card" onclick="selectCard('v1', '1')" id="1">
+			<!-- TODO: Add display ID from db and make it card ID -->
+			<% for(i=1;i<=displays.length;i++) {%>
+	    	<div class="card" onclick="selectCard('v<%= i %>', '<%= displays[i-1]._id %>')" id="<%= i%>">
 	    		<!-- TODO: Add display ID from database to v -->
-	    		<div id="v1" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
+	    		<div id="v<%= i %>" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
 	    		<figure class="card_icon">
 	    			<!-- TODO: Add display ID from database to i -->
-	    			<img id="i1">
+	    			<img id="i<%= i %>">
 	    		</figure>
 	    		<header class="card_title">
-	    			<h3>Display Name 1</h3>
+	    			<h3><%= displays[i-1].name %></h3>
 	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v2', '2')" id="2">
-	    		<div id="v2" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i2">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3> Display Name 2</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v3', '3')" id="3">
-	    		<div id="v3" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i3">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 3</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v4', '4')" id="4">
-	    		<div id="v4" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i4">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 4</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v5', '5')" id="5">
-	    		<div id="v5" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i5">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 1</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v6', '6')" id="6">
-	    		<div id="v6" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i6">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3> Display Name 2</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v7', '7')" id="7">
-	    		<div id="v7" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i7">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 3</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v8', '8')" id="8">
-	    		<div id="v8" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i8">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 4</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v9', '9')" id="9">
-	    		<div id="v9" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i9">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 1</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v10', '10')" id="10">
-	    		<div id="v10" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i10">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3> Display Name 2</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v11', '11')" id="11">
-	    		<div id="v11" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i11">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3> Display Name 2</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v12', '12')" id="12">
-	    		<div id="v12" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i12">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 3</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v13', '13')" id="13">
-	    		<div id="v13" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i13">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 4</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v14', '14')" id="14">
-	    		<div id="v14" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i14">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3>Display Name 1</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v15', '15')" id="15">
-	    		<div id="v15" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i15">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3> Display Name 2</h3>
-	    		</header>
-	    	</div>
-
-	    	<div class="card" onclick="selectCard('v16', '16')" id="16">
-	    		<div id="v16" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
-	    		<figure class="card_icon">
-	    			<img id="i16">
-	    		</figure>
-	    		<header class="card_title">
-	    			<h3> Display Name 2</h3>
-	    		</header>
-	    	</div>
+			</div>
+			<% } %>
 	    </section> <!-- End Card style -->
 	    <div class="btn-wrapper">
-	    	<input type="button" class="btn btn-top-color" value="Vote">
-	    </div>
+					<input type="hidden" name="currentSelected" value="">
+					<input type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+			</div>
 	</div> <!-- End voting page -->
   </body>
 
@@ -185,13 +38,26 @@
   	<p>Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
   	<p>Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
   </footer>
+
 </html>
 
 <script>
 	/* TODO: Replace with number of displays from EJS */ 
 	var NUM_DISPLAYS = 16;
 	var selected = null;
+	var selected_vote_id = null;
 
+	var votebtn = document.getElementById("voteBtn");
+
+	votebtn.onclick = function(){
+		var path = "/vote/" + selected;
+		var form = document.createElement("form");
+		form.setAttribute("method", "post");
+    form.setAttribute("action", path);
+		document.body.appendChild(form);
+		form.submit();
+		console.log("voted for: " + selected );
+	};
 	var icons = {
 		1: "images/icons/startup.svg",
 		2: "images/icons/telescope.svg",
@@ -221,7 +87,7 @@
 		/* We have already selected a card */
 		if(selected !== null) {
 			/* The ID of the check mark that was previously selected */
-			var prev_vote_id = "v" + selected;
+			var prev_vote_id = selected_vote_id;
 
 			/* Check if we are trying to deselect the card we already selected */
 			if(prev_vote_id === vote_id) {
@@ -229,6 +95,7 @@
 				document.getElementById(vote_id).style.visibility = "hidden";
 				/* Since we clicked the card we already selected, we now have nothing selected */
 				selected = null;
+				selected_vote_id = null;
 			}
 			/* Check if we are trying to select a different card than what we previously selected */
 			else if(prev_vote_id !== vote_id) {
@@ -238,12 +105,14 @@
 				document.getElementById(vote_id).style.visibility = "visible";
 				/* Update the display we selected */
 				selected = display_id;
+				selected_vote_id = vote_id;
 			}	
 		}
 		/* We have no cards currently selected */
 		else {
 			document.getElementById(vote_id).style.visibility = "visible";
 			selected = display_id;
+			selected_vote_id = vote_id;
 		}
 	}
 
