@@ -3,7 +3,10 @@
   <head>
     <title>CS Display Ranking</title>
     <link rel='stylesheet' href='css/stylesheet.css' />
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+    <!-- TODO: Remove this when AJAX call is working.  -->
+    <meta http-equiv="refresh" content="60">
   </head>
   <body>
   	<div id="leaderboard">
@@ -131,4 +134,19 @@
 	scroll(speed)
 	setInterval(function(){scroll(speed)}, speed * 2);
 
+	/* Untested auto refresh. Test once db is integrated */
+	// setInterval(function
+	//    $('html, body').load('app.js');
+	// }, 2000) /* time in milliseconds (ie 2 seconds)*/
+
+	/* Refresh every 5 seconds. Not tested for actual server */
+	// setInterval(function() {
+	// 	$('html, body').load('../app.js', function() {
+	// 		// alert('Load was performed');
+	// 	});	
+	// }, 5000) /* time in milliseconds */
+
+	// $('html, body').load('app.js', function() {
+	// 	alert('Load was performed');
+	// });
 </script>
