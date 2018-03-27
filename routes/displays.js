@@ -17,8 +17,8 @@ router.get('/vote', display.show);
 
 router.get('/leaderboard', display.leaderboard);
 
-router.get('/submitted', function(req, res) {
-  res.render("../views/submitted");
+router.get('/submitted/:name', function(req, res) {
+  res.render("../views/submitted", {name: req.params.name});
 });
 
 module.exports = router;

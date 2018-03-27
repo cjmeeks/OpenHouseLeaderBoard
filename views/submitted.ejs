@@ -3,7 +3,7 @@
   <head>
     <title>CS Display Ranking</title>
     <!-- <link rel='stylesheet' href='css/stylesheet.css' /> -->
-    <link rel='stylesheet' href='css/spaceship.css' />
+    <link rel='stylesheet' href='../css/spaceship.css' />
   </head>
   <body>
     <!-- Spaceship loading screen -->
@@ -49,14 +49,14 @@
         <div id="middle2"></div>
       </div>
       <div class="submitted">
-        <h2>Vote Submitted!</h2>
+        <h2>Vote For <%= name %> Submitted!</h2>
       </div>
     </div>
   </body>
   <script>
     /* Redirect to vote page after 5 seconds */
     setTimeout(function () {
-       window.location.href = "vote"; 
+       window.location.href = "/vote"; 
     }, 5000); // Redirect after 5s
   </script>
 </html>
