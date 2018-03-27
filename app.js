@@ -43,7 +43,7 @@ app.get('/vote', function(req, res) {
   res.render('vote');
 });
 
-app.get('/leaderboard', function(req, res) {
+app.get('/', function(req, res) {
   res.render('leaderboard');
 });
 

@@ -1,10 +1,134 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Display Voting</title>
+    <title>CS Display Ranking</title>
     <link rel='stylesheet' href='css/stylesheet.css' />
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   </head>
   <body>
-    <p>Test</p>
+  	<div id="leaderboard">
+    	
+    	<table class="table-fill">
+    		<caption><h1>Computer Science Open House Displays Leaderboard</h1></caption>
+    		<tr>
+    			<th>RANK</th>
+    			<!-- <th># VOTES</th> -->
+    			<th>DISPLAY</th>
+    		</tr>
+
+    		<!-- Dummy data -->
+    		<tr>
+    			<!-- TODO: Change this to js function -->
+    			<td>1</td>
+    			<!-- TODO: Change this to EJS -->
+    			<!-- <td>10</td> -->
+    			<!-- TODO: Change this to EJS -->
+    			<td>Python Underwater Basket Weaving Tool (10 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>2</td>
+    			<!-- <td>9</td> -->
+    			<td>UFO Detector (9 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>3</td>
+    			<!-- <td>9</td> -->
+    			<td>Roommate Finder (9 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>4</td>
+    			<!-- <td>7</td> -->
+    			<td>Bill Snyder: The Video Game (7 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>5</td>
+    			<!-- <td>6</td> -->
+    			<td>Willie the Wild Robot (6 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>6</td>
+    			<!-- <td>4</td> -->
+    			<td>UFO Detector (4 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>7</td>
+    			<!-- <td>3</td> -->
+    			<td>Roommate Finder (3 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>8</td>
+    			<!-- <td>3</td> -->
+    			<td>Bill Snyder: The Video Game (3 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>9</td>
+    			<!-- <td>2</td> -->
+    			<td>Willie the Wild Robot( 2 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>10</td>
+    			<!-- <td>1</td> -->
+    			<td>UFO Detector (1 vote)</td>
+    		</tr>
+
+    		<tr>
+    			<td>11</td>
+    			<!-- <td>1</td> -->
+    			<td>Roommate Finder (0 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>12</td>
+    			<!-- <td>1</td> -->
+    			<td>Bill Snyder: The Video Game (0 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>13</td>
+    			<!-- <td>1</td> -->
+    			<td>Willie the Wild Robot (0 votes)</td>
+    		</tr>
+
+    		<tr>
+    			<td>14</td>
+    			<!-- <td>1</td> -->
+    			<td>Willie the Wild Robot (0 votes)</td>
+    		</tr>
+    	</table>
+
+
+	</div>
   </body>
+
+  <!--  <footer class="footer">
+  	
+  	<p>Copyright &copy; 2018. All Rights Reserved </p>
+  	<p>Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
+  	<p>Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
+  </footer> -->
 </html>
+
+<script>
+	/* Scroll up and down in an infinite loop.
+	   Courtesy of http://jsfiddle.net/QUCWe/ */
+	function scroll(speed) {
+	    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
+	        $(this).animate({ scrollTop: 0 }, speed);
+	    });
+	}
+
+	speed = 10000;
+
+	scroll(speed)
+	setInterval(function(){scroll(speed)}, speed * 2);
+
+</script>
