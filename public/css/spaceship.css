@@ -4,13 +4,14 @@
 */
 html {
 	background-color: #000000;
-
+	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
 	
 	/* Change the screen color to purple */
 	animation: color-me-in 2s;
 	/* Don't change the screen color until the spaceship is gone */
 	animation-delay: 2s;
 	animation-fill-mode: forwards;
+	overflow: hidden;
 }
 
 /* Background animation,
@@ -409,5 +410,26 @@ li {
 }
 
 .submitted {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -50px;
+	color: white;
+	font-size: 24px;
+	opacity: 0;
 
+	animation: appear 2s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+	
+
+	/*border: 1px solid black;
+	border-radius: 100%;
+	padding: 15px 25px;*/
+}
+
+@keyframes appear {
+	0% { opacity: 0;}
+	100% { opacity:1;}
 }

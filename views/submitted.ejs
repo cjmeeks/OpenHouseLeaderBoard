@@ -4,11 +4,11 @@
     <title>CS Display Ranking</title>
     <!-- <link rel='stylesheet' href='css/stylesheet.css' /> -->
     <link rel='stylesheet' href='css/spaceship.css' />
-    
   </head>
   <body>
     <!-- Spaceship loading screen -->
     <div class="circle">
+      <!-- Stars...all twenty five of them -->
       <ul>
         <li id="one"></li>
         <li id="two"></li>
@@ -36,6 +36,7 @@
         <li id="twentyfour"></li>
         <li id="twentyfive"></li>
       </ul>
+      <!-- The spaceship -->
       <div class="spaceship">
         <div class="body"></div>
         <div id="window"></div>
@@ -47,6 +48,15 @@
         <div id="middle"></div>
         <div id="middle2"></div>
       </div>
+      <div class="submitted">
+        <h2>Vote Submitted!</h2>
+      </div>
     </div>
   </body>
+  <script>
+    /* Redirect to vote page after 5 seconds */
+    setTimeout(function () {
+       window.location.href = "vote"; 
+    }, 5000); // Redirect after 5s
+  </script>
 </html>
