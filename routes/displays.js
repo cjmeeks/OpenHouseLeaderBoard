@@ -16,9 +16,7 @@ router.post('/vote/:id', display.voteForOneDisplay);
 
 router.get('/vote', display.show);
 
-router.get('/leaderboard', function(req, res) {
-    res.render('leaderboard');
-  });
+router.get('/leaderboard', display.leaderboard);
 
 // // Edit employee
 // router.get('/edit/:id', employee.edit);

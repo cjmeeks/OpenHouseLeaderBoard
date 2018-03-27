@@ -21,10 +21,23 @@ displayController.show = function(req, res) {
         console.log("Error:", err);
       }
       else {
-        console.log(displays);
         res.render("../views/vote", {displays: displays});
       }
     });
+  };
+
+displayController.leaderboard = function(req, res) {
+  Display.find({}).exec(function (err, displays) {
+    if (err) {
+      console.log("Error:", err);
+    }
+    else {
+      displays.sort(function(a, b){
+        return b.votes-a.votes
+      });
+      res.render("../views/leaderboard", {displays: displays});
+    }
+  });
   };
 
   displayController.create = function(req, res) {
