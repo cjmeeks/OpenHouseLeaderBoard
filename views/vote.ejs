@@ -12,7 +12,7 @@
 	    <section class="card-container">
 			<!-- TODO: Add display ID from db and make it card ID -->
 			<% for(i=1;i<=displays.length;i++) {%>
-	    	<div class="card" onclick="selectCard('v<%= i %>', '<%= i %>')" id="<%= i %>">
+	    	<div class="card" onclick="selectCard('v<%= i %>', '<%= displays[i-1]._id %>')" id="<%= i%>">
 	    		<!-- TODO: Add display ID from database to v -->
 	    		<div id="v<%= i %>" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
 	    		<figure class="card_icon">
@@ -26,8 +26,9 @@
 			<% } %>
 	    </section> <!-- End Card style -->
 	    <div class="btn-wrapper">
-	    	<input type="button" class="btn btn-top-color" value="Vote">
-	    </div>
+					<input type="hidden" name="currentSelected" value="">
+					<input type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+			</div>
 	</div> <!-- End voting page -->
   </body>
 
@@ -37,13 +38,26 @@
   	<p>Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
   	<p>Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
   </footer>
+
 </html>
 
 <script>
 	/* TODO: Replace with number of displays from EJS */ 
 	var NUM_DISPLAYS = 16;
 	var selected = null;
+	var selected_vote_id = null;
 
+	var votebtn = document.getElementById("voteBtn");
+
+	votebtn.onclick = function(){
+		var path = "/vote/" + selected;
+		var form = document.createElement("form");
+		form.setAttribute("method", "post");
+    form.setAttribute("action", path);
+		document.body.appendChild(form);
+		form.submit();
+		console.log("voted for: " + selected );
+	};
 	var icons = {
 		1: "images/icons/startup.svg",
 		2: "images/icons/telescope.svg",
@@ -73,7 +87,7 @@
 		/* We have already selected a card */
 		if(selected !== null) {
 			/* The ID of the check mark that was previously selected */
-			var prev_vote_id = "v" + selected;
+			var prev_vote_id = selected_vote_id;
 
 			/* Check if we are trying to deselect the card we already selected */
 			if(prev_vote_id === vote_id) {
@@ -81,6 +95,7 @@
 				document.getElementById(vote_id).style.visibility = "hidden";
 				/* Since we clicked the card we already selected, we now have nothing selected */
 				selected = null;
+				selected_vote_id = null;
 			}
 			/* Check if we are trying to select a different card than what we previously selected */
 			else if(prev_vote_id !== vote_id) {
@@ -90,12 +105,14 @@
 				document.getElementById(vote_id).style.visibility = "visible";
 				/* Update the display we selected */
 				selected = display_id;
+				selected_vote_id = vote_id;
 			}	
 		}
 		/* We have no cards currently selected */
 		else {
 			document.getElementById(vote_id).style.visibility = "visible";
 			selected = display_id;
+			selected_vote_id = vote_id;
 		}
 	}
 

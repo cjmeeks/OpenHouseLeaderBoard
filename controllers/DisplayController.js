@@ -75,7 +75,7 @@ displayController.leaderboard = function(req, res) {
             console.log(err);
           } else {
             console.log("Successfully Voted an display.");
-            res.redirect("/");
+            res.redirect("/submitted");
           }
         });
       }
