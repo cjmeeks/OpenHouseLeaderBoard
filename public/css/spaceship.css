@@ -1,0 +1,435 @@
+/*
+	CSS Spaceship
+	Inspired by https://codepen.io/sok213/pen/zvrqqv
+*/
+html {
+	background-color: #000000;
+	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+	
+	/* Change the screen color to purple */
+	animation: color-me-in 2s;
+	/* Don't change the screen color until the spaceship is gone */
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+	overflow: hidden;
+}
+
+/* Background animation,
+ from https://css-tricks.com/using-multi-step-animations-transitions/ */
+@keyframes color-me-in {
+  /* You could think of as "step 1" */
+  0% {
+    background: #000000;
+  }
+  /* You could think of as "step 2" */
+  100% {
+    background: #5a2b81;
+  }
+}
+
+.circle {
+	position: relative;
+	margin: auto;
+	height: 300px;
+	width: 300px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,62ace5+100 */
+	/*background: #000000; /* Old browsers */*/
+	/*background: -moz-linear-gradient(top, #000000 0%, #000000 100%); /* FF3.6+ */*/
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(100%,#62ace5)); /* Chrome,Safari4+ */*/
+	/*background: -webkit-linear-gradient(top, #0000000%,#000000 100%); /* Chrome10+,Safari5.1+ */*/
+	/*background: -o-linear-gradient(top, #000000 0%, #000000 100%); /* Opera 11.10+ */*/
+	/*background: -ms-linear-gradient(top, #000000 0%, #000000 100%); /* IE10+ */*/
+	/*background: linear-gradient(to bottom, #000000 0%, #000000 100%); /* W3C */*/
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#62ace5',GradientType=0 ); /* IE6-9 */*/
+	/*border-radius: 100%;*/
+}
+
+li {
+	position: relative;
+	background-color: #FFFFEC;
+	list-style: none;
+	border-radius: 100%;
+}
+
+#one {
+	height: 5px;
+	width: 3px;
+	top: 10px;
+	z-index: 1;
+	left: 133px;
+	animation: twinkle 8.5s linear infinite;
+}
+
+#two {
+	width: 2px;
+	height: 4px;
+	left: 90px;
+	top: -140px;
+	z-index: 1;
+	animation: twinkle 9s linear infinite;
+}
+
+#three {
+	width: 4px;
+	height: 7px;
+	top: -250px;
+	left: 20px;
+	animation: twinkle 1.5s linear infinite;
+}
+
+#four {
+	width: 3px;
+	height: 6px;
+	top: -100px;
+	left: 230px;
+	z-index: 1;
+	animation: twinkle 3s linear infinite;
+}
+
+#five {
+	width: 2px;
+	height: 4px;
+	left: 220px;
+	top: -289px;
+	z-index: 1;
+	animation: twinkle 10s linear infinite;
+}
+
+#six {
+	height: 5px;
+	width: 3px;
+	top: 10px;
+	z-index: 1;
+	left: 300px;
+	animation: twinkle 2s linear infinite;
+}
+
+#seven {
+	width: 2px;
+	height: 4px;
+	left: 400px;
+	top: -140px;
+	z-index: 1;
+	animation: twinkle 2s linear infinite;
+}
+
+#eight {
+	width: 4px;
+	height: 7px;
+	top: -250px;
+	left: 500px;
+	animation: twinkle 4.5s linear infinite;
+}
+
+#nine {
+	width: 3px;
+	height: 6px;
+	top: -100px;
+	left: 600px;
+	z-index: 1;
+	animation: twinkle 3s linear infinite;
+}
+
+#ten {
+	width: 2px;
+	height: 4px;
+	left: 700px;
+	top: -289px;
+	z-index: 1;
+	animation: twinkle 4s linear infinite;
+}
+
+#eleven {
+	height: 5px;
+	width: 3px;
+	top: 10px;
+	z-index: 1;
+	left: -20px;
+	animation: twinkle 2s linear infinite;
+}
+
+#twelve {
+	width: 2px;
+	height: 4px;
+	left: -100px;
+	top: -140px;
+	z-index: 1;
+	animation: twinkle 9.5s linear infinite;
+}
+
+#thirteen {
+	width: 4px;
+	height: 7px;
+	top: -250px;
+	left: -200px;
+	animation: twinkle 1.5s linear infinite;
+}
+
+#fourteen {
+	width: 3px;
+	height: 6px;
+	top: -100px;
+	left: -300px;
+	z-index: 1;
+	animation: twinkle 3s linear infinite;
+}
+
+#fifteen {
+	width: 2px;
+	height: 4px;
+	left: -400px;
+	top: -289px;
+	z-index: 1;
+	animation: twinkle 8s linear infinite;
+}
+
+
+#sixteen {
+	height: 5px;
+	width: 3px;
+	top: 400px;
+	z-index: 1;
+	left: -200px;
+	animation: twinkle 2s linear infinite;
+}
+
+#seventeen {
+	width: 2px;
+	height: 4px;
+	left: -300px;
+	top: 390px;
+	z-index: 1;
+	animation: twinkle 6.5s linear infinite;
+}
+
+#eighteen {
+	width: 4px;
+	height: 7px;
+	top: 300px;
+	left: -20px;
+	animation: twinkle 6s linear infinite;
+}
+
+#nineteen {
+	width: 3px;
+	height: 6px;
+	top: 460px;
+	left: -10px;
+	z-index: 1;
+	animation: twinkle 7s linear infinite;
+}
+
+#twenty {
+	width: 2px;
+	height: 4px;
+	left: -500px;
+	top: 400px;
+	z-index: 1;
+	animation: twinkle 7.5s linear infinite;
+}
+
+#twentyone{
+	height: 5px;
+	width: 3px;
+	top: 400px;
+	z-index: 1;
+	left: 200px;
+	animation: twinkle 2s linear infinite;
+}
+
+#twentytwo {
+	width: 2px;
+	height: 4px;
+	left: 300px;
+	top: 190px;
+	z-index: 1;
+	animation: twinkle 6.5s linear infinite;
+}
+
+#twentythree {
+	width: 4px;
+	height: 7px;
+	top: 100px;
+	left: 20px;
+	animation: twinkle 6s linear infinite;
+}
+
+#twentyfour {
+	width: 3px;
+	height: 6px;
+	top: 150px;
+	left: 10px;
+	z-index: 1;
+	animation: twinkle 7s linear infinite;
+}
+
+#twentyfive {
+	width: 2px;
+	height: 4px;
+	left: 500px;
+	top: 240px;
+	z-index: 1;
+	animation: twinkle 7.5s linear infinite;
+}
+
+@keyframes twinkle {
+	0% { opacity: 1;}
+	50% { opacity: 1;}
+	100% { opacity:0; top: 600px;}
+}
+
+.spaceship {
+	position: relative;
+	width: 50px;
+	height: 100px;
+	left: 115px;
+	top: 400px;
+	animation: blastoff 5s linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes blastoff {
+	/*0%{top: -50px;}*/
+	100%{top: -1000px; display: none;}
+}
+
+.body {
+	position: relative;
+	border-left: 35px solid #919194;
+	border-right: 35px solid #88888c;
+	height: 120px;
+	background-color: grey;
+	border-bottom: 10px solid #808083;
+	z-index: 1;
+}
+
+#window {
+	position: absolute;
+	z-index: 1;
+	border: 20px solid #5a2b81;
+	border-top: 20px solid #462366;
+	border-right: 20px solid #462366;
+	left: 15px;
+	top: 20px;
+	border-radius: 100%;
+	transform: rotate(45deg);
+}
+
+#window2 {
+	position: absolute;
+	z-index: 1;
+	border: 15px solid white;
+	border-top: 15px solid #f7f3fb;
+	border-right: 15px solid #f7f3fb;
+	left: 20px;
+	top: 25px;
+	border-radius: 100%;
+	transform: rotate(45deg);
+}
+
+#triangle {
+	top: -26px;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	left: -7px;
+	border-right:31px solid transparent;
+	border-left:31px solid transparent;
+	border-bottom:31px solid #5a2b81;
+	border-radius: 100%;
+	transform: rotate(135deg);
+	z-index: 1;
+}
+
+#triangle2 {
+	top: -26px;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+
+	left: 15px;
+
+	z-index: 1;
+	border-right:31px solid transparent;
+	border-left:31px solid transparent;
+	border-bottom:31px solid #462366;
+	border-radius: 100%;
+	transform: rotate(225deg);
+}
+
+#wing {
+	position: relative;
+	width: 0px;
+	height: 0px;
+	left: -34px;
+	top: -27px;
+	border-right:31px solid transparent;
+	border-left:31px solid transparent;
+	border-bottom:31px solid #5a2b81;
+	border-radius: 70%;
+	transform: rotate(135deg);
+}
+
+#wing2 {
+	position: relative;
+	width: 0px;
+	height: 0px;
+	left: 43px;
+	top: -58px;
+	border-right:31px solid transparent;
+	border-left:31px solid transparent;
+	border-bottom:31px solid #462366;
+	border-radius: 70%;
+	transform: rotate(225deg);
+}
+
+#middle {
+	position: relative;
+	width: 0px;
+	height: 0px;
+	z-index: 1;
+	left: 20px;
+	top: -77px;
+	border-right:20px solid transparent;
+	border-left:30px solid transparent;
+	border-bottom:20px solid #462366;
+	transform: rotate(90deg);
+}
+
+#middle2 {
+	position: relative;
+	width: 0px;
+	height: 0px;
+	z-index: 1;
+	left: 0px;
+	top: -97px;
+	border-right:30px solid transparent;
+	border-left:20px solid transparent;
+	border-bottom:20px solid #5a2b81;
+	transform: rotate(270deg);
+}
+
+.submitted {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -50px;
+	color: white;
+	font-size: 24px;
+	opacity: 0;
+
+	animation: appear 2s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+	
+
+	/*border: 1px solid black;
+	border-radius: 100%;
+	padding: 15px 25px;*/
+}
+
+@keyframes appear {
+	0% { opacity: 0;}
+	100% { opacity:1;}
+}
