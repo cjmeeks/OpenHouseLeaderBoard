@@ -22,6 +22,33 @@ a {
 	color:white;
 }
 
+/* Error alert styles, from
+   https://www.w3schools.com/howto/howto_js_alert.asp */
+.error {
+	padding: 20px;
+	background-color: #f44336;
+	color: white;
+	margin-bottom: 15px;
+	visibility: hidden;
+	top: 0;
+	position: fixed;
+	width: 100%;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+}
+
 /* Footer style from https://tutorialzine.com/2015/01/freebie-5-responsive-footer-templates */
 .footer {
 	background-color: #919194;

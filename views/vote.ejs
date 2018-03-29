@@ -28,9 +28,14 @@
 	    </section> <!-- End Card section -->
 	    <div class="btn-wrapper">
 			<input type="hidden" name="currentSelected" value="">
-			<input type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+			<input name="vote" type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
 		</div>
 	</div> <!-- End voting page -->
+
+	<div class="error" id="errormsg">
+	  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	  <b>ERROR:</b> Please select a card.
+	</div>
   </body>
 
   <footer class="footer">
@@ -54,13 +59,16 @@
 	var votebtn = document.getElementById("voteBtn");
 	/* When the vote button is clicked, send a POST request */
 	votebtn.onclick = function(){
-		var path = "/vote/" + selected;
-		var form = document.createElement("form");
-		form.setAttribute("method", "post");
-    	form.setAttribute("action", path);
-		document.body.appendChild(form);
-		form.submit();
-		console.log("voted for: " + selected );
+		/* If nothing was selected, throw an error */
+		if(!error()) {
+			var path = "/vote/" + selected;
+			var form = document.createElement("form");
+			form.setAttribute("method", "post");
+	    	form.setAttribute("action", path);
+			document.body.appendChild(form);
+			form.submit();
+			console.log("voted for: " + selected );
+		}
 	};
 
 	/* 15 possible icons to be displayed for each card */
@@ -129,6 +137,15 @@
 		var max = 15;
 		var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 		return icons[randomNum];
+	}
+
+	function error() {
+		if(selected === null) {
+			console.log("It null fam");
+			document.getElementById('errormsg').style.visibility = "visible";
+			return true;
+		}
+		return false;
 	}
 
 	/* Give each card a random icon */
