@@ -183,7 +183,7 @@ Inspired by https://codepen.io/anon/pen/aYVpvX
 
 /* General table styles */
 #leaderboard .table-fill {
-	background: #5a2b81;
+	background: white;
 	border-radius: 3px;
 	border-collapse: collapse;
 	height: 320px;
@@ -198,10 +198,13 @@ Inspired by https://codepen.io/anon/pen/aYVpvX
 
 /* Table header styles */
 #leaderboard th {
-	color: white;
+	background: #5a2b81;
+	color:#D5DDE5;
+  	/*background:#1b1e24;*/
+	/*color: white;*/
 	/*background: #919194;*/
-  	border-right: 1px solid black;
-  	border-top: 1px solid black;
+  	border-right: 1px solid #C1C3D1;
+  	border-top: 1px solid #C1C3D1;
   	/*font-size: 24px;*/
   	/*padding: 24px;*/
   	text-align: center;
@@ -210,11 +213,14 @@ Inspired by https://codepen.io/anon/pen/aYVpvX
 
 /* Table row styles */
 #leaderboard tr {
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	border-right: 1px solid black;
+	border-top: 1px solid #C1C3D1;
+	border-bottom: 1px solid #C1C3D1;
+	border-right: 1px solid #C1C3D1;
 	font-size: 25px;
-	height: 100px;
+	height: 50px;
+	color:#666B85;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);]
 }
 
 
@@ -228,13 +234,13 @@ Inspired by https://codepen.io/anon/pen/aYVpvX
  
 /* Make every other row a darker shade of purple */
 #leaderboard tr:nth-child(odd) td {
-  background: #462366;
+  background: #EBEBEB;
 }
 
 /* Table data styles */
 #leaderboard td {
-	background: #5a2b81;
+	background: #ffffff;
 	padding: 20px;
 	text-align: center;
-	border-right: 1px solid black;
+	border-right: 1px solid #C1C3D1;
 }
