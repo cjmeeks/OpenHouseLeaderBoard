@@ -10,15 +10,16 @@
   		<div class="title"><h1><i>Select Your Favorite Computer Science Display</i></h1></div>
   		<!-- The grid of CS Open House Project cards -->
 	    <section class="card-container">
-			<!-- TODO: Add display ID from db and make it card ID -->
 			<% for(i=1;i<=displays.length;i++) {%>
+			<!-- An individual card -->
 	    	<div class="card" onclick="selectCard('v<%= i %>', '<%= displays[i-1]._id %>')" id="<%= i%>">
-	    		<!-- TODO: Add display ID from database to v -->
+	    		<!-- Card checkmark (hidden by default) -->
 	    		<div id="v<%= i %>" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
+	    		<!-- Random Card Icon -->
 	    		<figure class="card_icon">
-	    			<!-- TODO: Add display ID from database to i -->
 	    			<img id="i<%= i %>">
 	    		</figure>
+	    		<!-- Display Name -->
 	    		<header class="card_title">
 	    			<h3><%= displays[i-1].name %></h3>
 	    		</header>
@@ -26,9 +27,9 @@
 			<% } %>
 	    </section> <!-- End Card style -->
 	    <div class="btn-wrapper">
-					<input type="hidden" name="currentSelected" value="">
-					<input type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
-			</div>
+			<input type="hidden" name="currentSelected" value="">
+			<input type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+		</div>
 	</div> <!-- End voting page -->
   </body>
 
@@ -42,22 +43,27 @@
 </html>
 
 <script>
-	/* TODO: Replace with number of displays from EJS */ 
-	var NUM_DISPLAYS = 16;
+	/* The number of cards */
+	var num_displays = <%= displays.length %>
+	/* The Display ID of the selected card */
 	var selected = null;
+	/* The icon ID of the selected card */
 	var selected_vote_id = null;
 
+	/* The vote button */
 	var votebtn = document.getElementById("voteBtn");
-
+	/* When the vote button is clicked, send a POST request */
 	votebtn.onclick = function(){
 		var path = "/vote/" + selected;
 		var form = document.createElement("form");
 		form.setAttribute("method", "post");
-    form.setAttribute("action", path);
+    	form.setAttribute("action", path);
 		document.body.appendChild(form);
 		form.submit();
 		console.log("voted for: " + selected );
 	};
+
+	/* 15 possible icons to be displayed for each card */
 	var icons = {
 		1: "images/icons/startup.svg",
 		2: "images/icons/telescope.svg",
@@ -127,7 +133,7 @@
 
 	/* Give each card a random icon */
 	function populateCardIcons() {
-		for(var elem = 1; elem <= NUM_DISPLAYS; elem++) {
+		for(var elem = 1; elem <= num_displays; elem++) {
 			var id = "i" + elem;
 			var icon = getRandomIcon();
 			document.getElementById(id).src = icon; 
