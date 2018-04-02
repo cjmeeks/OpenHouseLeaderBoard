@@ -127,6 +127,8 @@
 			document.getElementById(vote_id).style.visibility = "visible";
 			selected = display_id;
 			selected_vote_id = vote_id;
+			/* Hide the submission error (if visible) once a card has been selected */
+			error();
 		}
 	}
 
@@ -145,6 +147,7 @@
 			document.getElementById('errormsg').style.visibility = "visible";
 			return true;
 		}
+		document.getElementById('errormsg').style.visibility = "hidden";
 		return false;
 	}
 

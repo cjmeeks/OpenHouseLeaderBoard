@@ -69,6 +69,10 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 ==============================================================*/
 
 /* Allow us to include the padding and border in the total width an height */
+#vote h1 {
+	font-size: 42px;
+}
+
 #vote * {
 	box-sizing: border-box;
 }
@@ -85,7 +89,7 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 #vote .card_title {
-	font-size: 2rem;
+	font-size: 2rem; /* 32px */
 	padding: .5rem;
 	text-align: center;
 }
