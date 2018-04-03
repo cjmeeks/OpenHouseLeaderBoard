@@ -5,7 +5,6 @@ Basic styles
 html {
 	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
 	color: white;
-	/* background-color: #5a2b81; */
 	background-color: #fff;
 }
 
@@ -25,12 +24,10 @@ a {
 /* Footer style from https://tutorialzine.com/2015/01/freebie-5-responsive-footer-templates */
 .footer {
 	background-color: #919194;
-	/*background-color: #292c2f;*/
 
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
-	/*text-align: center;*/
 	margin: 0;
 	
 	padding: 45px;
@@ -86,7 +83,6 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 #vote .voted {
 	display: block;
 	visibility: hidden;
-	/*position: absolute;*/
 	top: 20px;
 	right: 20px;
 	z-index: 1;
@@ -102,7 +98,6 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 #vote .title {
-	/*border: 1px solid black;*/
 	background-color: #919194;
 	text-align: center;
 	padding: 10px 32px;
@@ -161,58 +156,33 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	justify-content: center;
 }
 
-/* ============================================================
-Leaderboard styles
-Inspired by https://codepen.io/anon/pen/aYVpvX
-==============================================================*/
-/* Table Borders */
-/*#leaderboard table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}*/
-
-/* Cell Padding */
-/*#leaderboard th, td {
-	padding: 15px;
-}
-*/
-
 #leaderboard caption {
 	background: #919194;
 }
 
 /* General table styles */
 #leaderboard .table-fill {
-	/* background: #5a2b81; */
 	border-radius: 3px;
 	border-collapse: collapse;
-	/* height: 320px; */
 	margin: auto;
 	width: 85%;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 	animation: float 5s infinite;
-	/*padding: 100px;*/
-	/*max-width: 1000px;*/
 }
 
 
 /* Table header styles */
 #leaderboard th {
 	color: white;
-	/*background: #919194;*/
-  	/* border-right: 1px solid black; */
   	border-bottom: 1px solid black;
-	  font-size: 28px;
-	  font: bold;
-  	/*padding: 24px;*/
-	  text-align: center;
-	  background: #7B1FA2;
-  	/*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);*/
+	font-size: 28px;
+	font: bold;
+	text-align: center;
+	background: #7B1FA2;
 }
 
 /* Table row styles */
 #leaderboard tr {
-	/* border-bottom: 1px solid black; */
 	font-size: 24px;
 	height: 50px;
 	color: black;
@@ -235,6 +205,5 @@ Inspired by https://codepen.io/anon/pen/aYVpvX
 /* Table data styles */
 #leaderboard td {
 	background: #fff;
-	/* padding: 20px; */
 	text-align: center;
 }

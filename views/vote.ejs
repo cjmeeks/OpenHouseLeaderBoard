@@ -7,29 +7,35 @@
   </head>
   <body>
   	<div id="vote">
-  		<div class="title"><h1><i>Select Your Favorite Computer Science Display</i></h1></div>
+  		<div class="title"><h1>Select Your Favorite Computer Science Display</h1></div>
   		<!-- The grid of CS Open House Project cards -->
 	    <section class="card-container">
-			<!-- TODO: Add display ID from db and make it card ID -->
 			<% for(i=1;i<=displays.length;i++) {%>
+			<!-- An individual card -->
 	    	<div class="card" onclick="selectCard('v<%= i %>', '<%= displays[i-1]._id %>')" id="<%= i%>">
-	    		<!-- TODO: Add display ID from database to v -->
+	    		<!-- Card checkmark (hidden by default) -->
 	    		<div id="v<%= i %>" class="voted"><i class="fa fa-check fa-2x" aria-hidden="true"></i></div>
+	    		<!-- Random Card Icon -->
 	    		<figure class="card_icon">
-	    			<!-- TODO: Add display ID from database to i -->
 	    			<img id="i<%= i %>">
 	    		</figure>
+	    		<!-- Display Name -->
 	    		<header class="card_title">
 	    			<h3><%= displays[i-1].name %></h3>
 	    		</header>
 			</div>
 			<% } %>
-	    </section> <!-- End Card style -->
+	    </section> <!-- End Card section -->
 	    <div class="btn-wrapper">
-					<input type="hidden" name="currentSelected" value="">
-					<input type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
-			</div>
+			<input type="hidden" name="currentSelected" value="">
+			<input name="vote" type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+		</div>
 	</div> <!-- End voting page -->
+
+	<div class="error" id="errormsg">
+	  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	  <b>ERROR:</b> Please select a card.
+	</div>
   </body>
 
   <footer class="footer">
@@ -42,22 +48,30 @@
 </html>
 
 <script>
-	/* TODO: Replace with number of displays from EJS */ 
-	var NUM_DISPLAYS = 16;
+	/* The number of cards */
+	var num_displays = <%= displays.length %>
+	/* The Display ID of the selected card */
 	var selected = null;
+	/* The icon ID of the selected card */
 	var selected_vote_id = null;
 
+	/* The vote button */
 	var votebtn = document.getElementById("voteBtn");
-
+	/* When the vote button is clicked, send a POST request */
 	votebtn.onclick = function(){
-		var path = "/vote/" + selected;
-		var form = document.createElement("form");
-		form.setAttribute("method", "post");
-    form.setAttribute("action", path);
-		document.body.appendChild(form);
-		form.submit();
-		console.log("voted for: " + selected );
+		/* If nothing was selected, throw an error */
+		if(!error()) {
+			var path = "/vote/" + selected;
+			var form = document.createElement("form");
+			form.setAttribute("method", "post");
+	    	form.setAttribute("action", path);
+			document.body.appendChild(form);
+			form.submit();
+			console.log("voted for: " + selected );
+		}
 	};
+
+	/* 15 possible icons to be displayed for each card */
 	var icons = {
 		1: "images/icons/startup.svg",
 		2: "images/icons/telescope.svg",
@@ -75,6 +89,7 @@
 		14: "images/icons/moon-rover-2.svg",
 		15: "images/icons/space-ship-3.svg"
 	};
+	var NUM_ICONS = 15;
 
 	/* Adds/removes check marks accordingly, and updates the selected variable
 	   @param vote_id: the id of the check mark corresponding to this card
@@ -113,6 +128,8 @@
 			document.getElementById(vote_id).style.visibility = "visible";
 			selected = display_id;
 			selected_vote_id = vote_id;
+			/* Hide the submission error (if visible) once a card has been selected */
+			error();
 		}
 	}
 
@@ -120,16 +137,43 @@
 	function getRandomIcon() {
 		/* Random number between 1 and 15 */
 		var min = 1;
-		var max = 15;
+		var max = NUM_ICONS;
 		var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 		return icons[randomNum];
 	}
 
+	/* Get a number between 1 and the number of icons. If the number
+	   passed in is equal to the number of icons, reset. */
+	function getNotRandomNumber(count) {
+		if(count >= NUM_ICONS) {
+			return 1;
+		}
+		return count + 1;
+	}
+
+	/* Get an icon based on the number given */
+	function getIcon(count) {
+		return icons[count];
+	}
+
+	function error() {
+		if(selected === null) {
+			console.log("It null fam");
+			document.getElementById('errormsg').style.visibility = "visible";
+			return true;
+		}
+		document.getElementById('errormsg').style.visibility = "hidden";
+		return false;
+	}
+
 	/* Give each card a random icon */
 	function populateCardIcons() {
-		for(var elem = 1; elem <= NUM_DISPLAYS; elem++) {
+		var icon_num = 0;
+		for(var elem = 1; elem <= num_displays; elem++) {
 			var id = "i" + elem;
-			var icon = getRandomIcon();
+			// var icon = getRandomIcon();
+			icon_num = getNotRandomNumber(icon_num);
+			var icon = getIcon(icon_num);
 			document.getElementById(id).src = icon; 
 		}
 	}

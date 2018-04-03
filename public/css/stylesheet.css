@@ -6,7 +6,6 @@ html {
 	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
 	color: white;
 	background-color: #5a2b81;
-	/*background-color: #919194;*/
 }
 
 body {
@@ -22,15 +21,40 @@ a {
 	color:white;
 }
 
+/* Error alert styles, from
+   https://www.w3schools.com/howto/howto_js_alert.asp */
+.error {
+	padding: 20px;
+	background-color: #f44336;
+	color: white;
+	margin-bottom: 15px;
+	visibility: hidden;
+	top: 0;
+	position: fixed;
+	width: 100%;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+}
+
 /* Footer style from https://tutorialzine.com/2015/01/freebie-5-responsive-footer-templates */
 .footer {
 	background-color: #919194;
-	/*background-color: #292c2f;*/
 
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
-	/*text-align: center;*/
 	margin: 0;
 	
 	padding: 45px;
@@ -45,6 +69,10 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 ==============================================================*/
 
 /* Allow us to include the padding and border in the total width an height */
+#vote h1 {
+	font-size: 42px;
+}
+
 #vote * {
 	box-sizing: border-box;
 }
@@ -61,7 +89,7 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 #vote .card_title {
-	font-size: 2rem;
+	font-size: 2rem; /* 32px */
 	padding: .5rem;
 	text-align: center;
 }
@@ -86,7 +114,6 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 #vote .voted {
 	display: block;
 	visibility: hidden;
-	/*position: absolute;*/
 	top: 20px;
 	right: 20px;
 	z-index: 1;
@@ -102,7 +129,6 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 #vote .title {
-	/*border: 1px solid black;*/
 	background-color: #919194;
 	text-align: center;
 	padding: 10px 32px;
@@ -161,29 +187,13 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	justify-content: center;
 }
 
-/* ============================================================
-Leaderboard styles
-Inspired by https://codepen.io/anon/pen/aYVpvX
-==============================================================*/
-/* Table Borders */
-/*#leaderboard table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}*/
-
-/* Cell Padding */
-/*#leaderboard th, td {
-	padding: 15px;
-}
-*/
-
 #leaderboard caption {
 	background: #919194;
 }
 
 /* General table styles */
 #leaderboard .table-fill {
-	background: #5a2b81;
+	background: white;
 	border-radius: 3px;
 	border-collapse: collapse;
 	height: 320px;
@@ -191,30 +201,28 @@ Inspired by https://codepen.io/anon/pen/aYVpvX
 	width: 100%;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 	animation: float 5s infinite;
-	/*padding: 100px;*/
-	/*max-width: 1000px;*/
 }
 
 
 /* Table header styles */
 #leaderboard th {
-	color: white;
-	/*background: #919194;*/
-  	border-right: 1px solid black;
-  	border-top: 1px solid black;
-  	/*font-size: 24px;*/
-  	/*padding: 24px;*/
+	background: #5a2b81;
+	color:#ebebeb;
+  	border-right: 1px solid #C1C3D1;
+  	border-top: 1px solid #C1C3D1;
   	text-align: center;
-  	/*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);*/
 }
 
 /* Table row styles */
 #leaderboard tr {
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	border-right: 1px solid black;
+	border-top: 1px solid #C1C3D1;
+	border-bottom: 1px solid #C1C3D1;
+	border-right: 1px solid #C1C3D1;
 	font-size: 25px;
-	height: 100px;
+	height: 50px;
+	color:#666B85;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);]
 }
 
 
@@ -228,13 +236,13 @@ Inspired by https://codepen.io/anon/pen/aYVpvX
  
 /* Make every other row a darker shade of purple */
 #leaderboard tr:nth-child(odd) td {
-  background: #462366;
+  background: #EBEBEB;
 }
 
 /* Table data styles */
 #leaderboard td {
-	background: #5a2b81;
+	background: #ffffff;
 	padding: 20px;
 	text-align: center;
-	border-right: 1px solid black;
+	border-right: 1px solid #C1C3D1;
 }

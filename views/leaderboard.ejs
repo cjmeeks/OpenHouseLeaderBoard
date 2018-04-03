@@ -11,7 +11,7 @@
   <body>
   	<div id="leaderboard">
     	
-    	<table class="table-fill">
+    	<table class="table-fill" id="table">
 			<!-- <caption><h1>Computer Science Open House Displays Leaderboard</h1></caption> -->
 			<thead>
 				<tr>
@@ -34,42 +34,27 @@
 
 	</div>
   </body>
-
-  <!--  <footer class="footer">
-  	
-  	<p>Copyright &copy; 2018. All Rights Reserved </p>
-  	<p>Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
-  	<p>Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
-  </footer> -->
 </html>
 
 <script>
+	const SCROLL_SPEED = 5000;		// 5 milliseconds
+	const INTERVAL = SCROLL_SPEED * 2; 	
+
 	/* Scroll up and down in an infinite loop.
 	   Courtesy of http://jsfiddle.net/QUCWe/ */
 	function scroll(speed) {
 	    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
 	        $(this).animate({ scrollTop: 0 }, speed);
 	    });
+	    // auto_refresh();
 	}
+	scroll(SCROLL_SPEED);
+	setInterval(function(){scroll(SCROLL_SPEED);}, INTERVAL);
 
-	speed = 5000;
-
-	scroll(speed)
-	setInterval(function(){scroll(speed)}, speed * 2);
-
-	/* Untested auto refresh. Test once db is integrated */
-	// setInterval(function
-	//    $('html, body').load('app.js');
-	// }, 2000) /* time in milliseconds (ie 2 seconds)*/
-
-	/* Refresh every 5 seconds. Not tested for actual server */
-	// setInterval(function() {
-	// 	$('html, body').load('../app.js', function() {
-	// 		// alert('Load was performed');
-	// 	});	
-	// }, 5000) /* time in milliseconds */
-
-	// $('html, body').load('app.js', function() {
-	// 	alert('Load was performed');
-	// });
+	/* Refresh the page with an AJAX call */
+	// function auto_refresh() {
+	// 	$('table').load('leaderboard');
+	// 	console.log("Interval refreshed yo");
+	// }
+	// setInterval( function(){auto_refresh()}, 30000);
 </script>
