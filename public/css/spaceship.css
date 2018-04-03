@@ -261,11 +261,53 @@ li {
 	z-index: 1;
 	animation: twinkle 7.5s linear infinite;
 }
+#twentynine {
+	width: 3px;
+	height: 6px;
+	top: 10px;
+	right: 750px;
+	z-index: 1;
+	animation: twinkle 2s linear infinite;
+}
+
+#twentysix {
+	width: 2px;
+	height: 4px;
+	left: 750px;
+	top: 10px;
+	z-index: 1;
+	animation: twinkle 4.5s linear infinite;
+}
+#twentyseven {
+	width: 3px;
+	height: 6px;
+	top: 10px;
+	left: 800px;
+	z-index: 1;
+	animation: twinkle 5s linear infinite;
+}
+
+#twentyeight {
+	width: 2px;
+	height: 4px;
+	right: 800px;
+	top: 10px;
+	z-index: 1;
+	animation: twinkle 6.5s linear infinite;
+}
+#thirty {
+	width: 2px;
+	height: 4px;
+	left: 900px;
+	top: 10px;
+	z-index: 1;
+	animation: twinkle 6s linear infinite;
+}
 
 @keyframes twinkle {
 	0% { opacity: 1;}
 	50% { opacity: 1;}
-	100% { opacity:0; top: 600px;}
+	100% { opacity:0; top: 100vh;}
 }
 
 .spaceship {
@@ -279,7 +321,7 @@ li {
 }
 
 @keyframes blastoff {
-	100%{top: -1000px; display: none;}
+	100%{top: -100vh; display: none;}
 }
 
 .body {
@@ -400,13 +442,15 @@ li {
 
 .submitted {
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-left: -100px;
-	margin-top: -50px;
+	top: 40%;
+	/* left: 45%; */
+	width: 100vw;
+	/* margin-left: -100px; */
+	/* margin-top: -50px; */
 	color: white;
 	font-size: 24px;
 	opacity: 0;
+	text-align: center;
 
 	animation: appear 2s;
 	animation-delay: 2s;
