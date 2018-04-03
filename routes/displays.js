@@ -21,4 +21,11 @@ router.get('/submitted/:name', function(req, res) {
   res.render("../views/submitted", {name: req.params.name});
 });
 
+router.post('/clear', display.clear);
+
+router.get('/admin', function(req, res) {
+  res.render("../views/admin");
+});
+
+
 module.exports = router;
