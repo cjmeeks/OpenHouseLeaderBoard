@@ -89,6 +89,7 @@
 		14: "images/icons/moon-rover-2.svg",
 		15: "images/icons/space-ship-3.svg"
 	};
+	var NUM_ICONS = 15;
 
 	/* Adds/removes check marks accordingly, and updates the selected variable
 	   @param vote_id: the id of the check mark corresponding to this card
@@ -136,9 +137,23 @@
 	function getRandomIcon() {
 		/* Random number between 1 and 15 */
 		var min = 1;
-		var max = 15;
+		var max = NUM_ICONS;
 		var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 		return icons[randomNum];
+	}
+
+	/* Get a number between 1 and the number of icons. If the number
+	   passed in is equal to the number of icons, reset. */
+	function getNotRandomNumber(count) {
+		if(count >= NUM_ICONS) {
+			return 1;
+		}
+		return count + 1;
+	}
+
+	/* Get an icon based on the number given */
+	function getIcon(count) {
+		return icons[count];
 	}
 
 	function error() {
@@ -153,9 +168,12 @@
 
 	/* Give each card a random icon */
 	function populateCardIcons() {
+		var icon_num = 0;
 		for(var elem = 1; elem <= num_displays; elem++) {
 			var id = "i" + elem;
-			var icon = getRandomIcon();
+			// var icon = getRandomIcon();
+			icon_num = getNotRandomNumber(icon_num);
+			var icon = getIcon(icon_num);
 			document.getElementById(id).src = icon; 
 		}
 	}
