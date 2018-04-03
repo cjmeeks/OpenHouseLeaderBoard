@@ -71,4 +71,23 @@ displayController.leaderboard = function(req, res) {
     });
   };
 
+  displayController.clear = function(req, res){
+    Display.find({}).exec(function (err, displays) {
+      if (err) {
+        console.log("Error:", err);
+      }
+      else {
+          displays.forEach(function(display){
+            display.votes = 0;
+            display.save(function(err) {
+              if(err) {
+                console.log(err);
+              }
+            });
+          });
+          res.redirect("/leaderboard");
+          }
+        });
+  };
+
   module.exports = displayController;
