@@ -23,8 +23,8 @@
 			<tbody>
 				<% for(i=1;i<=displays.length;i++) {%>
 				<tr>
-					<td><%= i %></td>
-					<td><%= displays[i-1].name %></td>
+					<td>#<%= i %></td>
+					<td>"<%= displays[i-1].name %>"</td>
 					<td><%= displays[i-1].votes %></td>
 				</tr>
 				<% } %>
@@ -37,14 +37,14 @@
 </html>
 
 <script>
-	const SCROLL_SPEED = 5000;		// 5 milliseconds
+	const SCROLL_SPEED = 15000;		// 5 seconds
 	const INTERVAL = SCROLL_SPEED * 2; 	
 
 	/* Scroll up and down in an infinite loop.
 	   Courtesy of http://jsfiddle.net/QUCWe/ */
 	function scroll(speed) {
 	    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
-	        $(this).animate({ scrollTop: 0 }, speed);
+	        $(this).animate({ scrollTop: 0 }, speed / 2);
 	    });
 	    // auto_refresh();
 	}
