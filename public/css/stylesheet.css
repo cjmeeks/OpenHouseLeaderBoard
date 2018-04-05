@@ -94,6 +94,12 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	padding: .5rem;
 	text-align: center;
 	vertical-align: center;
+
+	/* Make text unhighlightable */
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 #vote .card-container {
@@ -109,6 +115,12 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 1rem;
+
+	/* Make image unhighlightable */
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 /* Green check mark icon
@@ -241,6 +253,24 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
   background: #EBEBEB;
 }
 
+/* Gold Trophy */
+#leaderboard tr:first-child img {
+	content: url("../images/trophies/trophy_gold.svg");
+	margin-bottom: -18px;
+}
+
+/* Silver Trophy */
+#leaderboard tr:nth-child(2) img {
+	content: url("../images/trophies/trophy_silver.svg");
+	margin-bottom: -18px;
+}
+
+/* Bronze Trophy */
+#leaderboard tr:nth-child(3) img {
+	content: url("../images/trophies/trophy_bronze.svg");
+	margin-bottom: -18px;
+}
+
 /* Table data styles */
 #leaderboard td {
 	background: #ffffff;
@@ -248,3 +278,4 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	text-align: center;
 	border-right: 1px solid #C1C3D1;
 }
+
