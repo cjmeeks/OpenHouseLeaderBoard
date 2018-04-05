@@ -253,14 +253,23 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
   background: #EBEBEB;
 }
 
+/* Gold Trophy */
 #leaderboard tr:first-child img {
 	content: url("../images/trophies/trophy_gold.svg");
 	margin-bottom: -18px;
 }
 
-/*#leaderboard tr:first-child img {
-	content: url("../images/trophies/trophy_gold.svg");
-}*/
+/* Silver Trophy */
+#leaderboard tr:nth-child(2) img {
+	content: url("../images/trophies/trophy_silver.svg");
+	margin-bottom: -18px;
+}
+
+/* Bronze Trophy */
+#leaderboard tr:nth-child(3) img {
+	content: url("../images/trophies/trophy_bronze.svg");
+	margin-bottom: -18px;
+}
 
 /* Table data styles */
 #leaderboard td {
@@ -270,6 +279,3 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	border-right: 1px solid #C1C3D1;
 }
 
-/*#leaderboard img {
-	display: inline-block;
-}*/

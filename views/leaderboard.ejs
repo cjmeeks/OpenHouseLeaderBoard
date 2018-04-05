@@ -42,19 +42,11 @@
 
 	/* Scroll up and down in an infinite loop.
 	   Courtesy of http://jsfiddle.net/QUCWe/ */
-	// function scroll(speed) {
-	//     $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
-	//         $(this).animate({ scrollTop: 0 }, speed / 2);
-	//     });
-	//     // auto_refresh();
-	// }
-	// scroll(SCROLL_SPEED);
-	// setInterval(function(){scroll(SCROLL_SPEED);}, INTERVAL);
-
-	/* Refresh the page with an AJAX call */
-	// function auto_refresh() {
-	// 	$('table').load('leaderboard');
-	// 	console.log("Interval refreshed yo");
-	// }
-	// setInterval( function(){auto_refresh()}, 30000);
+	function scroll(speed) {
+	    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
+	        $(this).animate({ scrollTop: 0 }, speed / 2);
+	    });
+	}
+	scroll(SCROLL_SPEED);
+	setInterval(function(){scroll(SCROLL_SPEED);}, INTERVAL);
 </script>
