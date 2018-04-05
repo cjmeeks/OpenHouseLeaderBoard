@@ -253,6 +253,15 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
   background: #EBEBEB;
 }
 
+#leaderboard tr:first-child img {
+	content: url("../images/trophies/trophy_gold.svg");
+	margin-bottom: -18px;
+}
+
+/*#leaderboard tr:first-child img {
+	content: url("../images/trophies/trophy_gold.svg");
+}*/
+
 /* Table data styles */
 #leaderboard td {
 	background: #ffffff;
@@ -260,3 +269,7 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	text-align: center;
 	border-right: 1px solid #C1C3D1;
 }
+
+/*#leaderboard img {
+	display: inline-block;
+}*/
