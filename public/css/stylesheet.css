@@ -253,21 +253,8 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
   background: #EBEBEB;
 }
 
-/* Gold Trophy */
-#leaderboard tr:first-child img {
-	content: url("../images/trophies/trophy_gold.svg");
-	margin-bottom: -18px;
-}
-
-/* Silver Trophy */
-#leaderboard tr:nth-child(2) img {
-	content: url("../images/trophies/trophy_silver.svg");
-	margin-bottom: -18px;
-}
-
-/* Bronze Trophy */
-#leaderboard tr:nth-child(3) img {
-	content: url("../images/trophies/trophy_bronze.svg");
+/* Trophies */
+#leaderboard tr img {
 	margin-bottom: -18px;
 }
 

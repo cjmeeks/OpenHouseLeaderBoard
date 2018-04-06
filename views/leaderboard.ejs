@@ -17,15 +17,22 @@
 				<tr>
 					<th>RANK</th>
 					<th>DISPLAY</th>
-					<th>Votes</th>
+					<th>VOTES</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% for(i=1;i<=displays.length;i++) {%>
+				<% var rank = getRank(i, displays)%>
+				<% var votes = displays[i-1].votes%>
 				<tr>
-					<td>#<%= i %></td>
-					<td>"<%= displays[i-1].name %>" <img /></td>
-					<td><%= displays[i-1].votes %></td>
+					<td>#<%= rank %></td>
+					<td>"<%= displays[i-1].name %>" 
+						<% if(rank < 4 && votes > 0) {%>
+							<% var img = getTrophyImage(rank, i, displays)%>
+							<img src=<%=img %>.svg >
+						<% } %>
+					</td>
+					<td><%= votes %></td>
 				</tr>
 				<% } %>
 			</tbody>
