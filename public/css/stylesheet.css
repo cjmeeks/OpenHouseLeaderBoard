@@ -50,7 +50,7 @@ a {
 
 /* Footer style from https://tutorialzine.com/2015/01/freebie-5-responsive-footer-templates */
 .footer {
-	background-color: #919194;
+	background-color: #5a2b81;
 
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
@@ -149,6 +149,24 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 
+#vote .fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #919194;
+}
+
+#vote .arrow {
+ 	display: inline-block;
+ 	font-size: 100px;
+ 	color: #fff;
+ 	visibility: hidden;
+}
+
+/*.fixed-bottom + .btn {
+	padding-bottom: 102px;
+}*/
+
 /* Button from:
    https://tympanus.net/Development/CreativeButtons/ */
 #vote .btn {
@@ -172,9 +190,10 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 
 	cursor: pointer;
 
-	background: #cb4e4e;
+	/*background: #9f67cc;*/
 	color: #fff;
-	box-shadow: 0 6px #808083;
+
+	box-shadow: 0 6px #6c339a;
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
@@ -183,17 +202,17 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 #vote .btn:hover {
-	box-shadow: 0 4px #808083;
+	box-shadow: 0 4px #6c339a;
 	top: 2px;
 }
 
 #vote .btn:active {
-	box-shadow: 0 0 #808083;
+	box-shadow: 0 0 #6c339a;
 	top: 6px;
 }
 
 #vote .btn-top-color {
-	background: #919194;
+	background: #5a2b81;
 }
 
 #vote .btn-wrapper {
