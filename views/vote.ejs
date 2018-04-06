@@ -27,9 +27,15 @@
 			</div>
 			<% } %>
 	    </section> <!-- End Card section -->
-	    <div class="btn-wrapper">
-			<input type="hidden" name="currentSelected" value="">
-			<input name="vote" type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+	    <div class="fixed-bottom">
+		    <div class="btn-wrapper">
+				<input type="hidden" name="currentSelected" value="">
+				<!-- Right arrow -->
+				<span class="arrow" id="rightArrow">&#10230;</span>
+				<input name="vote" type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+				<!-- Left arrow -->
+				<span class="arrow" id="leftArrow">&#10229;</span>
+			</div>
 		</div>
 	</div> <!-- End voting page -->
 
@@ -112,6 +118,8 @@
 				/* Since we clicked the card we already selected, we now have nothing selected */
 				selected = null;
 				selected_vote_id = null;
+
+				hideArrows();
 			}
 			/* Check if we are trying to select a different card than what we previously selected */
 			else if(prev_vote_id !== vote_id) {
@@ -122,6 +130,8 @@
 				/* Update the display we selected */
 				selected = display_id;
 				selected_vote_id = vote_id;
+
+				showArrows();
 			}	
 		}
 		/* We have no cards currently selected */
@@ -131,6 +141,8 @@
 			selected_vote_id = vote_id;
 			/* Hide the submission error (if visible) once a card has been selected */
 			error();
+
+			showArrows();
 		}
 	}
 
@@ -166,6 +178,17 @@
 		document.getElementById('errormsg').style.visibility = "hidden";
 		return false;
 	}
+
+	function showArrows() {
+		document.getElementById('rightArrow').style.visibility = "visible";
+		document.getElementById('leftArrow').style.visibility = "visible";
+	}
+
+	function hideArrows() {
+		document.getElementById('rightArrow').style.visibility = "hidden";
+		document.getElementById('leftArrow').style.visibility = "hidden";
+	}
+
 
 	/* Give each card a random icon */
 	function populateCardIcons() {
