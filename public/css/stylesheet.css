@@ -58,7 +58,7 @@ a {
 	margin: 0;
 	
 	padding: 45px;
-	margin-top: 80px;
+	margin-top: 40px;
 }
 
 
@@ -107,6 +107,7 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	padding: 3rem;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	grid-gap: 2rem;
+	margin-top: 110px;
 }
 
 #vote img {
@@ -148,24 +149,44 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	padding: 10px 32px;
 }
 
+#vote .fixed-top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
 
 #vote .fixed-bottom {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	background: #919194;
+	background: #5a2b81;
 }
 
 #vote .arrow {
  	display: inline-block;
  	font-size: 100px;
- 	color: #fff;
+ 	color: #ffffff;
  	visibility: hidden;
 }
 
-/*.fixed-bottom + .btn {
-	padding-bottom: 102px;
-}*/
+#vote .vote-footer {
+	margin-bottom: 110px;
+	padding: 3rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#p1 {
+	text-align: left;
+}
+
+#p2 {
+	text-align: center;
+}
+
+#p3 {
+	text-align: right;
+}
 
 /* Button from:
    https://tympanus.net/Development/CreativeButtons/ */
@@ -190,10 +211,9 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 
 	cursor: pointer;
 
-	/*background: #9f67cc;*/
 	color: #fff;
 
-	box-shadow: 0 6px #6c339a;
+	box-shadow: 0 6px #808083; 
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
@@ -202,17 +222,17 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 }
 
 #vote .btn:hover {
-	box-shadow: 0 4px #6c339a;
+	box-shadow: 0 4px #808083; 
 	top: 2px;
 }
 
 #vote .btn:active {
-	box-shadow: 0 0 #6c339a;
+	box-shadow: 0 0 #808083;
 	top: 6px;
 }
 
 #vote .btn-top-color {
-	background: #5a2b81;
+	background: #919194;
 }
 
 #vote .btn-wrapper {
