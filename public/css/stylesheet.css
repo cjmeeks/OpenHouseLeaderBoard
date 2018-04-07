@@ -68,7 +68,6 @@ Grid inspired by:
 https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/
 ==============================================================*/
 
-
 #vote h1 {
 	font-size: 42px;
 }
@@ -242,6 +241,8 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 
 #leaderboard caption {
 	background: #919194;
+	position:fixed;
+	width: 100%;
 }
 
 /* General table styles */
@@ -254,8 +255,12 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	width: 100%;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 	animation: float 5s infinite;
+	vertical-align: inherit;
 }
 
+#leaderboard thead {
+	position: fixed;
+}
 
 /* Table header styles */
 #leaderboard th {
@@ -263,7 +268,7 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	color:#ebebeb;
   	border-right: 1px solid #C1C3D1;
   	border-top: 1px solid #C1C3D1;
-  	text-align: center;
+	text-align: center;
 }
 
 /* Table row styles */
@@ -275,21 +280,24 @@ https://bryanlrobinson.com/blog/2017/07/26/howto-css-grid-layout-to-make-a-simpl
 	height: 50px;
 	color:#666B85;
     font-weight:normal;
-    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);]
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
 
+#leaderboard tr:nth-child(0) tr{
+	margin-top: 1000px;
+}
 
 #leaderboard tr:first-child {
-  border-top:none;
+    border-top:none;
 }
 
 #leaderboard tr:last-child {
-  border-bottom:none;
+  	border-bottom:none;
 }
  
 /* Make every other row a darker shade of purple */
 #leaderboard tr:nth-child(odd) td {
-  background: #EBEBEB;
+  	background: #EBEBEB;
 }
 
 /* Trophies */

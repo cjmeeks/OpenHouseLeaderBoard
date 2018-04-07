@@ -3,42 +3,40 @@
   <head>
     <title>CS Display Ranking</title>
     <link rel='stylesheet' href='css/stylesheet.css' />
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
     <!-- TODO: Remove this when AJAX call is working.  -->
     <meta http-equiv="refresh" content="60">
   </head>
   <body>
   	<div id="leaderboard">
-    	
-    	<table class="table-fill" id="table">
+		<table class="table-fill">
 			<!-- <caption><h1>Computer Science Open House Displays Leaderboard</h1></caption> -->
 			<thead>
 				<tr>
-					<th>RANK</th>
-					<th>DISPLAY</th>
-					<th>VOTES</th>
+					<th id="rank-head">RANK</th>
+					<th id="name-head">DISPLAY</th>
+					<th id="votes-head">VOTES</th>
 				</tr>
 			</thead>
 			<tbody>
+				<tr class=blank-row></tr>
 				<% for(i=1;i<=displays.length;i++) {%>
 				<% var rank = getRank(i, displays)%>
 				<% var votes = displays[i-1].votes%>
 				<tr>
-					<td>#<%= rank %></td>
-					<td>"<%= displays[i-1].name %>" 
+					<td class="rank-col">#<%= rank %></td>
+					<td class="name-col">"<%= displays[i-1].name %>" 
 						<% if(rank < 4 && votes > 0) {%>
 							<% var img = getTrophyImage(rank, i, displays)%>
 							<img src=<%=img %>.svg >
 						<% } %>
 					</td>
-					<td><%= votes %></td>
+					<td class="votes-col"><%= votes %></td>
 				</tr>
 				<% } %>
 			</tbody>
-    	</table>
-
-
+		</table>
 	</div>
   </body>
 </html>
@@ -56,4 +54,43 @@
 	}
 	scroll(SCROLL_SPEED);
 	setInterval(function(){scroll(SCROLL_SPEED);}, INTERVAL);
+</script>
+
+<!-- Without using an external library, which may not be compatible
+	 with Node JS, having fixed table headers is complicated. Setting
+	 the position:fixed CSS property for the thead element results in
+	 the table headers losing their sizing and positioning. 
+	
+	 The following JQuery calls use thh CORRECT table data width and
+	 padding properties to "reset" the size of the table header, and
+	 move the table body down so that it remains fully visible with
+	 the fixed header. -->
+<script>
+	/* Insert blank row to pad data from the header. */
+	function adjustTableHeaders(){
+		$('.blank-row').css("height", $('#rank-head').css("height"));
+		$('.blank-row').css("padding", $('#rank-head').css("padding"));
+	
+		/* Equalize the column data and header widths
+		   NOTE: Since the rank and vote headers are sometimes larger than
+				 their data entires (VOTES vs '9' e.g.), first attempt
+				 to set the header width to the data width to minimize it,
+				 then reset the data width to the header width in case it
+				 was smaller. */
+		$('#rank-head').css("width", $('.rank-col').css("width"));
+		$('.rank-col').css("width", $('#rank-head').css("width"));
+		$('#name-head').css("width", $('.name-col').css("width"));
+		$('#votes-head').css("width", $('.votes-col').css("width"));
+		$('.votes-col').css("width", $('#votes-head').css("width"));
+
+		/* Equalize the column data and header paddings 
+		   NOTE: Similar, the correction is needed for Rank and Votes */
+		$('#rank-head').css("padding", $('.rank-col').css("padding"));
+		$('.rank-col').css("padding", $('#rank-head').css("padding"));
+		$('#name-head').css("padding", $('.name-col').css("padding"));
+		$('#votes-head').css("padding", $('.votes-col').css("padding"));
+		$('.votes-col').css("padding", $('#votes-head').css("padding"));
+	}
+	adjustTableHeaders();
+
 </script>
