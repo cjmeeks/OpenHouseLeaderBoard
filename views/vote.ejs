@@ -7,7 +7,9 @@
   </head>
   <body>
   	<div id="vote">
-  		<div class="title"><h1>Select Your Favorite Computer Science Display</h1></div>
+		<div class="fixed-top">
+			  <div class="title"><h1>Select Your Favorite Computer Science Display</h1></div>
+		</div>
   		<!-- The grid of CS Open House Project cards -->
 	    <section class="card-container">
 			<% for(i=1;i<=displays.length;i++) {%>
@@ -26,7 +28,12 @@
 	    		
 			</div>
 			<% } %>
-	    </section> <!-- End Card section -->
+		</section> <!-- End Card section -->
+		<div class="vote-footer">
+			<p id="p1">Copyright &copy; 2018. All Rights Reserved </p>
+			<p id="p2">Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
+			<p id="p3">Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
+		</div>
 	    <div class="fixed-bottom">
 		    <div class="btn-wrapper">
 				<input type="hidden" name="currentSelected" value="">
@@ -44,13 +51,6 @@
 	  <b>ERROR:</b> Please select a card.
 	</div>
   </body>
-
-  <footer class="footer">
-  	
-  	<p>Copyright &copy; 2018. All Rights Reserved </p>
-  	<p>Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
-  	<p>Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
-  </footer>
 
 </html>
 
