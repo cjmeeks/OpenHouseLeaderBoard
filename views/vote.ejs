@@ -7,7 +7,9 @@
   </head>
   <body>
   	<div id="vote">
-  		<div class="title"><h1>Select Your Favorite Computer Science Display</h1></div>
+		<div class="fixed-top">
+			  <div class="title"><h1>Select Your Favorite Computer Science Display</h1></div>
+		</div>
   		<!-- The grid of CS Open House Project cards -->
 	    <section class="card-container">
 			<% for(i=1;i<=displays.length;i++) {%>
@@ -19,16 +21,28 @@
 	    		<figure class="card_icon">
 	    			<img id="i<%= i %>">
 	    		</figure>
-	    		<!-- Display Name -->
+	    		<!-- Display Name -->	    		
 	    		<header class="card_title">
-	    			<h3><%= displays[i-1].name %></h3>
+	    			<h3>"<%= displays[i-1].name %>"</h3>
 	    		</header>
+	    		
 			</div>
 			<% } %>
-	    </section> <!-- End Card section -->
-	    <div class="btn-wrapper">
-			<input type="hidden" name="currentSelected" value="">
-			<input name="vote" type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+		</section> <!-- End Card section -->
+		<div class="vote-footer">
+			<p id="p1">Copyright &copy; 2018. All Rights Reserved </p>
+			<p id="p2">Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
+			<p id="p3">Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
+		</div>
+	    <div class="fixed-bottom">
+		    <div class="btn-wrapper">
+				<input type="hidden" name="currentSelected" value="">
+				<!-- Right arrow -->
+				<span class="arrow" id="rightArrow">&#10230;</span>
+				<input name="vote" type="Submit" class="btn btn-top-color" value="Vote" id="voteBtn">
+				<!-- Left arrow -->
+				<span class="arrow" id="leftArrow">&#10229;</span>
+			</div>
 		</div>
 	</div> <!-- End voting page -->
 
@@ -37,13 +51,6 @@
 	  <b>ERROR:</b> Please select a card.
 	</div>
   </body>
-
-  <footer class="footer">
-  	
-  	<p>Copyright &copy; 2018. All Rights Reserved </p>
-  	<p>Developed by <a href="http://www.RyanPaulWilliams.com">Ryan Williams</a>, <a href="https://github.com/cjmeeks">Clifford Meeks</a>, and <a href="https://github.com/djlovell">Danny Lovell</a></p>
-  	<p>Icons made by <a href="https://www.freepik.com">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
-  </footer>
 
 </html>
 
@@ -111,6 +118,8 @@
 				/* Since we clicked the card we already selected, we now have nothing selected */
 				selected = null;
 				selected_vote_id = null;
+
+				hideArrows();
 			}
 			/* Check if we are trying to select a different card than what we previously selected */
 			else if(prev_vote_id !== vote_id) {
@@ -121,6 +130,8 @@
 				/* Update the display we selected */
 				selected = display_id;
 				selected_vote_id = vote_id;
+
+				showArrows();
 			}	
 		}
 		/* We have no cards currently selected */
@@ -130,6 +141,8 @@
 			selected_vote_id = vote_id;
 			/* Hide the submission error (if visible) once a card has been selected */
 			error();
+
+			showArrows();
 		}
 	}
 
@@ -165,6 +178,17 @@
 		document.getElementById('errormsg').style.visibility = "hidden";
 		return false;
 	}
+
+	function showArrows() {
+		document.getElementById('rightArrow').style.visibility = "visible";
+		document.getElementById('leftArrow').style.visibility = "visible";
+	}
+
+	function hideArrows() {
+		document.getElementById('rightArrow').style.visibility = "hidden";
+		document.getElementById('leftArrow').style.visibility = "hidden";
+	}
+
 
 	/* Give each card a random icon */
 	function populateCardIcons() {
