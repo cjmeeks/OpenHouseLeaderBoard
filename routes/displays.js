@@ -5,7 +5,7 @@ var display = require("../controllers/DisplayController.js");
 /* GET users listing. */
 
 // Create employee
-router.get('/create', display.create);
+// router.get('/create', display.create);
 
 // Save employee
 router.post('/save', display.save);
@@ -23,9 +23,13 @@ router.get('/submitted/:name', function(req, res) {
 
 router.post('/clear', display.clear);
 
-router.get('/admin', function(req, res) {
-  res.render("../views/admin");
-});
+router.get('/admin', display.admin);
+
+router.get('/delete/:id', display.delete);
+
+router.post('/saveEdit', display.saveEdit);
+
+router.get('/edit/:id', display.edit);
 
 
 module.exports = router;

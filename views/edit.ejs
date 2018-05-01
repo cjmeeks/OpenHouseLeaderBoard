@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display Voting</title>
+    <link rel='stylesheet' href='css/admin.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div>
+        <h1 class="">Editing <%= display.name%></h1>
+        <form class="card" action="/saveEdit" method="POST">
+          <label class="label1">Display Name</label>
+          <input class="input1" type="text" name="name" value=<%=display.name%>>
+          <label class="label2">Description</label>
+          <input class="input2" type="text" name="description" value=<%=display.description%>>
+          <label class="label2">Votes</label>
+          <input class="input2" type="number" name="votes" value=<%=display.votes%>>
+          <input name="add" type="Submit" class="btn btn-top-color addSubmitButton" value="Add Display">
+        </form>
+    </div>
+  </body>
+  </html>
