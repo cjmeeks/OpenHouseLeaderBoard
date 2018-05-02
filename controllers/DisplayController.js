@@ -41,7 +41,7 @@ displayController.leaderboard = function(req, res) {
   displayController.admin = function(req, res) {
     Display.find({}).exec(function (err, displays) {
       if (err) {
-        console.log("Error:", err);
+        res.send(err);
       }
       else {
         displays.sort(function(a, b){
@@ -71,17 +71,6 @@ displayController.leaderboard = function(req, res) {
       res.redirect("/admin");
     }
   };
-
-  display.save(function(err) {
-    if(err) {
-      console.log(err);
-      res.render("../views/displays/create");
-    } else {
-      console.log("Successfully created an display.");
-      res.redirect("/");
-    }
-  });
-};
 
 displayController.voteForOneDisplay = function(req, res){
   Display.findOne({_id: req.params.id}).exec(function (err, display) {

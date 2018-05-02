@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var display = require("../controllers/DisplayController.js");
+var login = require("../controllers/Login.js");
 /* GET users listing. */
 
 // Create employee
@@ -23,13 +24,13 @@ router.get('/submitted/:name', function(req, res) {
 
 router.post('/clear', display.clear);
 
-router.get('/admin', display.admin);
+router.get('/admin', login.authenticateAdmin, display.admin);
 
-router.get('/delete/:id', display.delete);
+router.get('/delete/:id',login.authenticateAdmin, display.delete);
 
-router.post('/saveEdit', display.saveEdit);
+router.post('/saveEdit',login.authenticateAdmin, display.saveEdit);
 
-router.get('/edit/:id', display.edit);
+router.get('/edit/:id',login.authenticateAdmin, display.edit);
 
 
 module.exports = router;
