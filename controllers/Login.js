@@ -36,7 +36,7 @@ loginController.loginUser = function(req,res){
 
 loginController.logout = function(req,res){
   req.session.destroy();
-  res.render("../views/login");
+  res.redirect("/auth/login");
 };
 
 

@@ -22,7 +22,7 @@ router.get('/submitted/:name', function(req, res) {
   res.render("../views/submitted", {name: req.params.name});
 });
 
-router.post('/clear', display.clear);
+router.post('/clear', login.authenticateAdmin,display.clear);
 
 router.get('/admin', login.authenticateAdmin, display.admin);
 
