@@ -149,6 +149,7 @@ displayController.clear = function(req, res){
         console.log("Error:", err);
       }
       else {
+          console.log(display.name);
           res.render("../views/edit", {display: display});
           }
         });
@@ -157,10 +158,12 @@ displayController.clear = function(req, res){
   displayController.saveEdit = function(req, res) {
     var display = new Display();
     if(req.body){
+      display._id = req.params.id;
       display.name = req.body.name;
       display.description = req.body.description;
       display.votes = req.body.votes;
-      Display.update({ _id: req.params.id }, { $set: { name: req.body.name, description: req.body.description, votes: req.body.votes} }).exec();
+      console.log(display);
+      Display.update({ _id: req.params.id }, { $set: display }).exec();
       res.redirect("/admin");
     }
   };

@@ -8,11 +8,11 @@
   <body>
     <div>
         <h1 class="">Editing <%= display.name%></h1>
-        <form class="card" action="/saveEdit" method="POST">
+        <form class="card" action="/saveEdit/<%=display.id%>" method="POST">
           <label class="label1">Display Name</label>
-          <input class="input1" type="text" name="name" value=<%=display.name%>>
+          <input class="input1" type="text" name="name" value="<%=display.name%>">
           <label class="label2">Description</label>
-          <input class="input2" type="text" name="description" value=<%=display.description%>>
+          <input class="input2" type="text" name="description" value="<%=display.description%>">
           <label class="label2">Votes</label>
           <input class="input2" type="number" name="votes" value=<%=display.votes%>>
           <input name="add" type="Submit" class="btn btn-top-color addSubmitButton" value="Update Display">

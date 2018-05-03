@@ -28,7 +28,7 @@ router.get('/admin', login.authenticateAdmin, display.admin);
 
 router.get('/delete/:id',login.authenticateAdmin, display.delete);
 
-router.post('/saveEdit',login.authenticateAdmin, display.saveEdit);
+router.post('/saveEdit/:id',login.authenticateAdmin, display.saveEdit);
 
 router.get('/edit/:id',login.authenticateAdmin, display.edit);
 
