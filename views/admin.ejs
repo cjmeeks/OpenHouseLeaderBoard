@@ -25,16 +25,18 @@
         <div class="admin-option-3">
           <ul class="list">
               <% if(displays){ %>
-                <% for(i=0;i<=displays.length-2;i+2) {%>
+                <% for(i=0;i<=displays.length-2;i+=2) {%>
                   <div class="list-item">
-                    <%= JSON.stringify(displays[i].name); %>
-                    <a href="/edit/<%= displays[i].id %>"><button>Edit</button></a>
-                    <a href="/delete/<%= displays[i].id %>"><button>Delete</button></a>
-                  </div>
-                  <div class="list-item">
-                    <%= JSON.stringify(displays[i+1].name); %>
-                    <a href="/edit/<%= displays[i+1].id %>"><button>Edit</button></a>
-                    <a href="/delete/<%= displays[i+1].id %>"><button>Delete</button></a>
+                    <div class="list-item-1 list-item-card">
+                      <div><%= JSON.stringify(displays[i].name); %></div>
+                      <a href="/edit/<%= displays[i].id %>"><button>Edit</button></a>
+                      <a href="/delete/<%= displays[i].id %>"><button>Delete</button></a>
+                    </div>
+                    <div class="list-item-2 list-item-card">
+                      <div><%= JSON.stringify(displays[i+1].name); %></div>
+                      <a href="/edit/<%= displays[i+1].id %>"><button>Edit</button></a>
+                      <a href="/delete/<%= displays[i+1].id %>"><button>Delete</button></a>
+                    </div>
                   </div>
                 <%} %>
               <%} %>
