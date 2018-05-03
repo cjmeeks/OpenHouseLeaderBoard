@@ -38,23 +38,39 @@ displayController.leaderboard = function(req, res) {
   });
 };
 
-displayController.create = function(req, res) {
-  res.render("../views/displays/create");
-};
+  displayController.admin = function(req, res) {
+    Display.find({}).exec(function (err, displays) {
+      if (err) {
+        res.send(err);
+      }
+      else {
+        displays.sort(function(a, b){
+          return b.votes-a.votes
+        });
+        res.render("../views/admin", {displays: displays});
+      }
+    });
+  };
 
-displayController.save = function(req, res) {
-  var display = new Display(req.body);
-
-  display.save(function(err) {
-    if(err) {
-      console.log(err);
-      res.render("../views/displays/create");
-    } else {
-      console.log("Successfully created an display.");
-      res.redirect("/");
+  displayController.save = function(req, res) {
+    var display = new Display();
+    if(req.body){
+      display.name = req.body.displayName;
+      display.description = req.body.description;
+      display.votes = 0;
+      display.save(function(err) {
+        if(err) {
+          console.log(err);
+        } else {
+          console.log("Successfully created an display.");
+          res.redirect("/admin");
+        }
+      });
     }
-  });
-};
+    else{
+      res.redirect("/admin");
+    }
+  };
 
 displayController.voteForOneDisplay = function(req, res){
   Display.findOne({_id: req.params.id}).exec(function (err, display) {
@@ -99,4 +115,54 @@ displayController.clear = function(req, res){
       });
 };
 
-module.exports = displayController;
+  displayController.clear = function(req, res){
+    Display.find({}).exec(function (err, displays) {
+      if (err) {
+        console.log("Error:", err);
+      }
+      else {
+          // displays.forEach(function(display){
+          //   display.votes = 0;
+          //   display.save(function(err) {
+          //     if(err) {
+          //       console.log(err);
+          //     }
+          //   });
+          // });
+          res.redirect("/leaderboard");
+          }
+        });
+  };
+
+  displayController.delete = function(req, res){
+    Display.remove({ _id:req.params.id }, function(err){
+      if(err) console.log(err);
+      else{
+        res.redirect("/admin");
+      }
+    });
+  };
+
+  displayController.edit = function(req, res){
+    Display.findOne({_id: req.params.id}).exec(function (err, display) {
+      if (err) {
+        console.log("Error:", err);
+      }
+      else {
+          res.render("../views/edit", {display: display});
+          }
+        });
+  };
+
+  displayController.saveEdit = function(req, res) {
+    var display = new Display();
+    if(req.body){
+      display.name = req.body.name;
+      display.description = req.body.description;
+      display.votes = req.body.votes;
+      Display.update({ _id: req.params.id }, { $set: { name: req.body.name, description: req.body.description, votes: req.body.votes} }).exec();
+      res.redirect("/admin");
+    }
+  };
+
+  module.exports = displayController;

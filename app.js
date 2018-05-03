@@ -1,6 +1,7 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var session = require('express-session');
 
 const PORT = 3001;
 
@@ -21,6 +22,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var displays = require('./routes/displays');
+var login = require("./routes/login");
 
 
 var app = express();
@@ -36,9 +38,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//use sessions for tracking logins
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false
+}));
 
 //our routes
 app.use('/', displays);
+app.use('/auth', login );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

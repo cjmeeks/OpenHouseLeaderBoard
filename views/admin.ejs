@@ -2,12 +2,46 @@
 <html>
   <head>
     <title>Display Voting</title>
-    <link rel='stylesheet' href='css/stylesheet.css' />
+    <link rel='stylesheet' href='css/admin.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <form action="/clear" method="POST">
-			<input name="clear" type="Submit" class="btn btn-top-color" value="Clear All Votes">
-		</form>
+    <div class="admin-grid">
+        <h1 class="admin-title">ADMIN PAGE</h1>
+        <h3 class="admin-subtitle">OPTIONS</h3>
+        <h5 class="admin-option-1-header">Clear Votes</h5>
+        <h5 class="admin-option-2-header">Add Display</h5>
+        <h5 class="admin-option-3-header">Edit Display</h5>
+        <form class="admin-option-1 card" action="/clear" method="POST">
+          <input name="clear" type="Submit" class="btn btn-top-color clear-btn" value="Clear All Votes">
+        </form>
+        <form class="admin-option-2 addDisplayGrid card" action="/save" method="POST">
+          <label class="label1">Display Name</label>
+          <input class="input1" type="text" name="displayName">
+          <label class="label2">Description</label>
+          <input class="input2" type="text" name="description">
+          <input name="add" type="Submit" class="btn btn-top-color addSubmitButton" value="Add Display">
+        </form>
+        <div class="admin-option-3">
+          <ul class="list">
+              <% if(displays){ %>
+                <% for(i=0;i<=displays.length-2;i+=2) {%>
+                  <div class="list-item">
+                    <div class="list-item-1 list-item-card">
+                      <div><%= JSON.stringify(displays[i].name); %></div>
+                      <a href="/edit/<%= displays[i].id %>"><button>Edit</button></a>
+                      <a href="/delete/<%= displays[i].id %>"><button>Delete</button></a>
+                    </div>
+                    <div class="list-item-2 list-item-card">
+                      <div><%= JSON.stringify(displays[i+1].name); %></div>
+                      <a href="/edit/<%= displays[i+1].id %>"><button>Edit</button></a>
+                      <a href="/delete/<%= displays[i+1].id %>"><button>Delete</button></a>
+                    </div>
+                  </div>
+                <%} %>
+              <%} %>
+          </ul>
+        </form>
+    </div>
   </body>
   </html>
