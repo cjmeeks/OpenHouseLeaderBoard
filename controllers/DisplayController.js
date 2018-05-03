@@ -155,6 +155,7 @@ displayController.clear = function(req, res){
   };
 
   displayController.saveEdit = function(req, res) {
+    var display = new Display();
     if(req.body){
       display.name = req.body.name;
       display.description = req.body.description;
