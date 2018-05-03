@@ -102,14 +102,14 @@ displayController.clear = function(req, res){
       console.log("Error:", err);
     }
     else {
-        // displays.forEach(function(display){
-        //   display.votes = 0;
-        //   display.save(function(err) {
-        //     if(err) {
-        //       console.log(err);
-        //     }
-        //   });
-        // });
+        displays.forEach(function(display){
+          display.votes = 0;
+          display.save(function(err) {
+            if(err) {
+              console.log(err);
+            }
+          });
+        });
         res.redirect("/leaderboard");
         }
       });
